@@ -553,7 +553,6 @@ public class AI : MonoBehaviour {
 		}
 
 		if (LifeManager.instance.currentlife == 0) {
-			LifeManager.instance.gameObject.SetActive (false);
 			StartCoroutine( WorldStates.instance.Screenshot ());
 			WorldStates.instance.GameOver ();
 		}

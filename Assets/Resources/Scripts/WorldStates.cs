@@ -69,7 +69,6 @@ public class WorldStates : MonoBehaviour {
 		spawnTimeCount = 0;
 		spawnerDelay = 2;
 
-		LifeManager.instance.gameObject.SetActive (true);
 		LifeManager.instance.currentlife = 3;
 
 		SharkJump.SetActive (true);
@@ -80,7 +79,6 @@ public class WorldStates : MonoBehaviour {
 	void Continue()
 	{
 		gameplayCanvas.enabled = true;
-		LifeManager.instance.gameObject.SetActive (true);
 		SharkJump.SetActive (true);
 		spawner.SetActive (true);
 	}
