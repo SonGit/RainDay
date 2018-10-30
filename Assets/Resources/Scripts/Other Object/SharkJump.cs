@@ -63,7 +63,7 @@ public class SharkJump : MonoBehaviour {
 				if (girl != null) {
 					ScoreManager.instance.SubtractScore (girl.type,50,transform.position + Vector3.up);
 				}
-				Destroy (col.gameObject);
+				girl.Destroy ();
 			}
 		}
 	}

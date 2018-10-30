@@ -21,6 +21,9 @@ public class ObjectPool : MonoBehaviour {
 	GenericObject<Score> blueScoreFX;
 	GenericObject<Score> yellowScoreFX;
 
+	GenericObject<RainGirl> playerGirl;
+	GenericObject<RainGirl> playerBoy;
+
 	void Awake()
 	{
 		instance = this;
@@ -41,6 +44,8 @@ public class ObjectPool : MonoBehaviour {
 		redScoreFX = new GenericObject<Score>(ObjectFactory.PrefabType.RedScore,3);
 		blueScoreFX = new GenericObject<Score>(ObjectFactory.PrefabType.BlueScore,3);
 		yellowScoreFX = new GenericObject<Score>(ObjectFactory.PrefabType.YellowScore,3);
+		playerGirl = new GenericObject<RainGirl>(ObjectFactory.PrefabType.PlayerGirl,3);
+		playerBoy = new GenericObject<RainGirl>(ObjectFactory.PrefabType.PlayerBoy,3);
 	}
 
 	#region Effect
@@ -90,6 +95,16 @@ public class ObjectPool : MonoBehaviour {
 	public Score GetYellowScoreFX()
 	{
 		return yellowScoreFX.GetObj ();
+	}
+
+	public RainGirl GetPlayerGirl()
+	{
+		return playerGirl.GetObj ();
+	}
+
+	public RainGirl GetPlayerBoy()
+	{
+		return playerBoy.GetObj ();
 	}
 	#endregion
 

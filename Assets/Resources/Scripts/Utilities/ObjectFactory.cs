@@ -36,15 +36,9 @@ public class ObjectFactory: MonoBehaviour {
 		// GameObject
 		Rock,
 
-		// Enemy
-		DinoFat,
-		Dino_LongLeg,
-		Dino_Triceratop,
-		Dino_Fly,
-
-		// WeaponIcon
-		BowIcon,
-		SpearIcon
+		// AIs
+		PlayerBoy,
+		PlayerGirl,
 	}
 
 	public Dictionary<PrefabType,string> PrefabPaths = new Dictionary<PrefabType, string> {
@@ -70,14 +64,9 @@ public class ObjectFactory: MonoBehaviour {
 		{ PrefabType.Rock, "Prefabs/Rock" },
 
 		// Enemy
-		{ PrefabType.DinoFat, "Prefabs/DinoFat" },
-		{ PrefabType.Dino_LongLeg, "Prefabs/Dino_LongLeg" },
-		{ PrefabType.Dino_Triceratop, "Prefabs/DinoTriceratop" },
-		{ PrefabType.Dino_Fly, "Prefabs/Dino_Fly" },
+		{ PrefabType.PlayerBoy, "Prefabs/Player/Player_Boy" },
+		{ PrefabType.PlayerGirl, "Prefabs/Player/Player_Girl" },
 
-		// WeaponIcon
-		{ PrefabType.BowIcon, "Prefabs/bowIcon" },
-		{ PrefabType.SpearIcon, "Prefabs/spearIcon" },
 	};
 
 	// Make GameObject from Resources

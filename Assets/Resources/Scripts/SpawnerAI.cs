@@ -29,15 +29,19 @@ public class SpawnerAI : MonoBehaviour {
 			for (int i = 0; i < WorldStates.instance.numSpawn; i++) {
 				pos = new Vector3 (Random.Range(0,5),1.5f,Random.Range(0,5));
 				int rand = Random.Range (0, 2);
+				GameObject _player;
 				if (rand == 0) {
-					GameObject _player = (GameObject)Instantiate (playerBoy, pos, Quaternion.identity);
+					_player = ObjectPool.instance.GetPlayerGirl ().gameObject;
 					movement = _player.GetComponent<RGMovementController> ();
 					movement.GoToRandDirection ();
 				} else {
-					GameObject _player = (GameObject)Instantiate (playerGirl, pos, Quaternion.identity);
+					_player = ObjectPool.instance.GetPlayerBoy ().gameObject;
 					movement = _player.GetComponent<RGMovementController> ();
 					movement.GoToRandDirection ();
 				}
+
+				_player.transform.position = pos;
+
 				yield return new WaitForSeconds (.75f);
 			}
 		

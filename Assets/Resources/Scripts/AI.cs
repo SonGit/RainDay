@@ -10,7 +10,6 @@ public enum GirlType
 	YELLOW,
 }
 public class AI : MonoBehaviour {
-	public GirlType type;
 	private RainGirl rain;
 	public Transform Spawn_FX;
 	public float speedscale;
@@ -78,24 +77,14 @@ public class AI : MonoBehaviour {
 
 	void Awake () {
 		arrows = this.GetComponentsInChildren<Arrow> ();
-		currentState = RGState.START;
-
-		cd = GetComponentInChildren<Image>();
-		_color = cd.color;
-		cd.enabled = false;
-		TurnOffAllArrow ();
-
 		layer_maskAI = LayerMask.GetMask("AI");
 		layer_maskWall = LayerMask.GetMask("Fence");
 		layer_maskWalkable = LayerMask.GetMask("Walkable");
-//		thisCollider = this.GetComponent<Collider> ();
-
-		//thisCollider.enabled = false;
 	}
+
 	void Start(){
 		RotateMesh ();
 		rain = GetComponent<RainGirl> ();
-		type = rain.type;
 	}
 	// Update is called once per frame
 	void Update () {
@@ -144,7 +133,7 @@ public class AI : MonoBehaviour {
 		}
 
 		if (currentState == RGState.START) {
-			
+			transform.localScale = Vector3.one;
 			raycasting = false;
 
 			if (transform.position.y > 0) {
@@ -572,7 +561,7 @@ public class AI : MonoBehaviour {
 		GetWaterFX (pos);
 		// Player die
 		StartCoroutine(Sinking());
-		Destroy (gameObject);
+		rain.Destroy ();
 
 		//GameObject _death = (GameObject)Instantiate (FX, Spawn_FX.position+ new Vector3(0,-0.5f,0), Quaternion.Euler (new Vector3 (90, 0, 0)));
 	}
@@ -666,6 +655,20 @@ public class AI : MonoBehaviour {
 		} else {
 			Falling ();
 		}
+	}
+
+	public void Reset()
+	{
+		StopAllCoroutines ();
+		isDead = false;
+		currentState = RGState.START;
+		cd = GetComponentInChildren<Image>();
+		_color = cd.color;
+		cd.enabled = false;
+		TurnOffAllArrow ();
+		movement.enabled = true;
+		movement.Run ();
+		transform.localScale = Vector3.one;
 	}
 
 }

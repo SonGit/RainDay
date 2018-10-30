@@ -13,9 +13,6 @@ public class Score : Cacheable {
 
 	void Awake () {
 		_text = GetComponentInChildren<TextMeshPro> ();
-//		_color = _text.color;
-	
-		print (a);
 	}
 	// Update is called once per frame
 	void Update () {

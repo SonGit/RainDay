@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RainGirl : MonoBehaviour {
+public class RainGirl : Cacheable {
 
 	public GirlType type;
 	private SkinnedMeshRenderer skin;
@@ -13,7 +13,7 @@ public class RainGirl : MonoBehaviour {
 
 	// Use this for initialization
 	void Awake () {
-		
+		ai = this.GetComponent<AI> ();
 		skin = this.GetComponentInChildren<SkinnedMeshRenderer> ();
 		Anim = this.GetComponentInChildren<Animator> ();
 
@@ -25,7 +25,7 @@ public class RainGirl : MonoBehaviour {
 		}
 	}
 	void Start(){
-		ai = this.GetComponent<AI> ();
+
 	}
 	// Update is called once per frame
 	void Update () {
@@ -37,7 +37,7 @@ public class RainGirl : MonoBehaviour {
 		transform.localScale = new Vector3 (1,1,1);
 		ai.isDead = false;
 		ai.movement.enabled = true;
-		print ("reset");
+
 	}
 
 
@@ -137,6 +137,27 @@ public class RainGirl : MonoBehaviour {
 			if (t >= 0) {
 				Anim.SetFloat ("IsStartle", t -= Time.deltaTime*0.5f);
 			}
+		}
+	}
+
+	public override void OnLive ()
+	{
+		if (gameObject != null) {
+			gameObject.SetActive (true);
+		}
+		if (this.gameObject.name == "Player_Boy") {
+			RandomBoyType ();
+		} else {
+			RandomGirlType ();
+		}
+
+		ai.Reset ();
+	}
+
+	public override void OnDestroy ()
+	{
+		if (gameObject != null) {
+			gameObject.SetActive (false);
 		}
 	}
 
