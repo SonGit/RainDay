@@ -1,0 +1,21 @@
+﻿<Properties StartupItem="Assembly-CSharp.csproj" RefactoringSettings.EnableRefactorings="True">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Resources\Scripts\RainGirl\RGPlayerInput.cs">
+    <Files>
+      <File FileName="Assets\Resources\Scripts\ScoreManager.cs" Line="95" Column="36" />
+      <File FileName="Assets\Resources\Scripts\WorldStates.cs" Line="25" Column="2" />
+      <File FileName="Assets\Resources\Scripts\SpawnerAI.cs" Line="27" Column="1" />
+      <File FileName="Assets\Resources\Scripts\OutBoardDestroy.cs" Line="59" Column="40" />
+      <File FileName="Assets\Resources\Scripts\Other Object\SharkJump.cs" Line="135" Column="17" />
+      <File FileName="Assets\Resources\Scripts\Score.cs" Line="41" Column="28" />
+      <File FileName="Assets\Resources\Scripts\FX\DizzyFX.cs" Line="7" Column="1" />
+      <File FileName="Assets\Resources\Scripts\Utilities\ObjectFactory.cs" Line="41" Column="16" />
+      <File FileName="Assets\Resources\Scripts\Utilities\ObjectPool.cs" Line="31" Column="3" />
+      <File FileName="Assets\Resources\Scripts\RainGirl\RGPlayerInput.cs" Line="280" Column="5" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
