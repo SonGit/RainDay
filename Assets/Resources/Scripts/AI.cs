@@ -51,7 +51,8 @@ public class AI : MonoBehaviour {
 		START,
 		FALLING,
 		FELL,
-		GPS
+		GPS,
+		GO_HOME
 	}
 
 	public RGState currentState;
@@ -671,6 +672,13 @@ public class AI : MonoBehaviour {
 		movement.enabled = true;
 		movement.Run ();
 		transform.localScale = Vector3.one;
+	}
+
+	public void GoHome(Direction dir)
+	{
+		currentState = RGState.GO_HOME;
+		movement.GoToDirection (dir);
+		TurnOffAllArrow ();
 	}
 
 }

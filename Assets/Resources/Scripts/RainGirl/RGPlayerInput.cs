@@ -267,7 +267,8 @@ public class RGPlayerInput : MonoBehaviour {
 		   inputState == AI.RGState.START ||
 		   inputState == AI.RGState.WAIT ||
 		   inputState == AI.RGState.FELL ||
-		   inputState == AI.RGState.GPS) {
+		   inputState == AI.RGState.GPS || 
+			inputState == AI.RGState.GO_HOME ) {
 			return false;
 		}
 		return true;
