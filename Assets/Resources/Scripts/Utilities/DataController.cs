@@ -26,35 +26,35 @@ public class DataController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		//LoadPlayerProgress ();
+		LoadPlayerProgress ();
 		LoadSoundSettingProgress ();
 		LoadMusicSettingProgress ();
 	}
 
-//	public void SubmitNewPlayerScore(int newScore)
-//	{
-//		if (newScore > finalScoreUI.highScore) {
-//			finalScoreUI.highScore = newScore;
-//			SavePlayerProgress ();
-//		}
-//	}
-//
-//	public int GetHighestPlayerScore ()
-//	{
-//		return finalScoreUI.highScore;
-//	}
-//
-//	public void LoadPlayerProgress ()
-//	{
-//		if (PlayerPrefs.HasKey ("HighestScore")) {
-//			finalScoreUI.highScore = PlayerPrefs.GetInt ("HighestScore");
-//		}
-//	}
-//
-//	private void SavePlayerProgress ()
-//	{
-//		PlayerPrefs.SetInt ("HighestScore", finalScoreUI.highScore);
-//	}
+	public void SubmitNewPlayerScore(int newScore)
+	{
+		if (newScore > ScoreManager.hiScore) {
+			ScoreManager.hiScore = newScore;
+			SavePlayerProgress ();
+		}
+	}
+
+	public int GetHighestPlayerScore ()
+	{
+		return ScoreManager.hiScore;
+	}
+
+	public void LoadPlayerProgress ()
+	{
+		if (PlayerPrefs.HasKey ("HighestScore")) {
+			ScoreManager.hiScore = PlayerPrefs.GetInt ("HighestScore");
+		}
+	}
+
+	private void SavePlayerProgress ()
+	{
+		PlayerPrefs.SetInt ("HighestScore", ScoreManager.hiScore);
+	}
 
 	public void SubmitSoundSetting(string a)
 	{

@@ -9,7 +9,9 @@ public class ScoreManager : MonoBehaviour {
 
 	public GameObject[] scorePrefab;
 
-	public int score;
+	public static int score;
+
+	public static int hiScore;
 
 	public TextMeshProUGUI totalScore;
 
@@ -22,6 +24,7 @@ public class ScoreManager : MonoBehaviour {
 
 
 	void Start () {
+		hiScore = score;
 	}
 	void Update ()
 	{

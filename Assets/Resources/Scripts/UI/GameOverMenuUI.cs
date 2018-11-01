@@ -15,26 +15,26 @@ public class GameOverMenuUI : MonoBehaviour {
 		iTween.ValueTo(gameObject, 
 			iTween.Hash(
 				"from", rectTransform.anchoredPosition,
-				"to", new Vector2(rectTransform.anchoredPosition.x, 0),
+				"to", new Vector2(rectTransform.anchoredPosition.x, -50),
 				"time", time, 
 				"easetype", iTween.EaseType.linear,
 				"islocal",true,
 				"onupdatetarget", this.gameObject, 
 				"onupdate", "MovePos",
-				"delay",1));
+				"delay",0.3));
 
 	}
 	public void CloseGameOverMenu(){
 		iTween.ValueTo(gameObject, 
 			iTween.Hash(
 				"from", rectTransform.anchoredPosition,
-				"to", new Vector2(rectTransform.anchoredPosition.x, 950),
+				"to", new Vector2(rectTransform.anchoredPosition.x, 1100),
 				"time", time, 
 				"easetype", iTween.EaseType.linear,
 				"islocal",true,
 				"onupdatetarget", this.gameObject, 
 				"onupdate", "MovePos",
-				"delay",1));
+				"delay",0.3));
 
 	}
 	public void MovePos(Vector2 position){

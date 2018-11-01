@@ -334,6 +334,7 @@
      <Compile Include="Assets\Resources\Scripts\StunFX.cs" />
      <Compile Include="Assets\Resources\Scripts\SwipeManager.cs" />
      <Compile Include="Assets\Resources\Scripts\UI\Arrow.cs" />
+     <Compile Include="Assets\Resources\Scripts\UI\FinalScoreUI.cs" />
      <Compile Include="Assets\Resources\Scripts\UI\GameOverMenuUI.cs" />
      <Compile Include="Assets\Resources\Scripts\UI\MainMenuUI.cs" />
      <Compile Include="Assets\Resources\Scripts\UI\MusicButton.cs" />

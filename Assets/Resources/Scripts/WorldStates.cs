@@ -74,6 +74,9 @@ public class WorldStates : MonoBehaviour {
 
 	void Reset()
 	{
+		objGameOverPanel.SetActive (false);
+		objAds.SetActive (true);
+		isAds = false;
 		CustomSound.instance.PlayThemeSound ();
 		CustomSound.instance.StopEndingSound ();
 		speed = .8f;
@@ -90,6 +93,8 @@ public class WorldStates : MonoBehaviour {
 
 	void Continue()
 	{	
+		objGameOverPanel.SetActive (false);
+		objAds.SetActive (false);
 		CustomSound.instance.StopEndingSound ();
 		CustomSound.instance.PlayThemeSound ();
 		pauseBtn.SetActive (true);
@@ -153,6 +158,7 @@ public class WorldStates : MonoBehaviour {
 	}
 	public void GameOver()
 	{
+		DataController.Instance.SubmitNewPlayerScore (ScoreManager.score);
 		pauseBtn.SetActive (false);
 		CustomSound.instance.StopThemeSound ();
 		CustomSound.instance.PlayEndingSound ();
@@ -195,7 +201,7 @@ public class WorldStates : MonoBehaviour {
 
 	public IEnumerator Screenshot(){
 		StartCoroutine( ScreenShot.Instance.TakeScreenShot ());
-		yield return new WaitForSeconds (1.5f);
+		yield return new WaitForSeconds (0.5f);
 	}
 
 	public void CountDown ()

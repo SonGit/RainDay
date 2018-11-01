@@ -548,17 +548,20 @@ public class AI : MonoBehaviour {
 
 	public void EndFall(){
 		// FX water
-		LifeManager.instance.currentlife--;
+		if (LifeManager.instance.currentlife > 0) {
+			LifeManager.instance.currentlife--;
+		}
+		if (LifeManager.instance.currentlife == 0) {
+			StartCoroutine( WorldStates.instance.Screenshot ());
+			WorldStates.instance.GameOver ();
+		}
 
 		RainGirl rainGirl = this.GetComponent<RainGirl> ();
 		if (rainGirl != null) {
 			ScoreManager.instance.SubtractScore (rainGirl.type,50,transform.position + Vector3.up);
 		}
 
-		if (LifeManager.instance.currentlife == 0) {
-			StartCoroutine( WorldStates.instance.Screenshot ());
-			WorldStates.instance.GameOver ();
-		}
+
 		Vector3 pos = Spawn_FX.position + new Vector3 (0, -0.2f, 0);
 		AudioManager_RG.instance.PlayClip (AudioManager_RG.SoundFX.WaterSplash,transform.position);
 		GetWaterFX (pos);

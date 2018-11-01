@@ -66,9 +66,9 @@ public class AdsManager : MonoBehaviour {
 
 	private void Rewardplayer ()
 	{
+		GameOverMenuUI.instance.CloseGameOverMenu ();
 		LifeManager.instance.currentlife++;
 		WorldStates.instance.isAds = true;
-		GameOverMenuUI.instance.CloseGameOverMenu ();
 		WorldStates.instance.ContinuteGame ();
 	}
 		
