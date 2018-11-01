@@ -7,7 +7,7 @@ public class RainGirl : Cacheable {
 	public GirlType type;
 	private SkinnedMeshRenderer skin;
 	public AI ai;
-	private Texture[] rand = new Texture[6];
+	private Texture[] rand = new Texture[4];
 	private Animator Anim;
 	float t;
 
@@ -28,13 +28,13 @@ public class RainGirl : Cacheable {
 
 	void LoadTexture()
 	{
-		rand[0] = Resources.Load<Texture> ("Materials/Player/Boy_tex_red");
-		rand[1]  = Resources.Load<Texture> ("Materials/Player/Boy_tex_yellow");
-		rand[2]  = Resources.Load<Texture> ("Materials/Player/Boy_tex_green");
 
-		rand[3] = Resources.Load<Texture> ("Materials/Player/Girl_tex_red");
-		rand[4] = Resources.Load<Texture> ("Materials/Player/Girl_tex_yellow");
-		rand[5] = Resources.Load<Texture> ("Materials/Player/Girl_tex_green");
+		rand[0]  = Resources.Load<Texture> ("Materials/Player/Boy_tex_yellow");
+		rand[1]  = Resources.Load<Texture> ("Materials/Player/Boy_tex_green");
+
+
+		rand[2] = Resources.Load<Texture> ("Materials/Player/Girl_tex_yellow");
+		rand[3] = Resources.Load<Texture> ("Materials/Player/Girl_tex_green");
 	}
 
 	void Start(){
@@ -67,7 +67,7 @@ public class RainGirl : Cacheable {
 
 	void RandomBoyType()
 	{
-		int rand = Random.Range (0,3);
+		int rand = Random.Range (0,2);
 		switch (rand) {
 
 		case 0:
@@ -75,9 +75,6 @@ public class RainGirl : Cacheable {
 			break;
 		case 1:
 			SetBoyType (GirlType.YELLOW);
-			break;
-		case 2:
-			SetBoyType (GirlType.RED);
 			break;
 		}
 	}
@@ -87,14 +84,11 @@ public class RainGirl : Cacheable {
 		
 		switch (newType) {
 
-		case GirlType.RED:
-			skin.materials[0].mainTexture = rand[0];
-			break;
 		case GirlType.YELLOW:
-			skin.materials[0].mainTexture =  rand[1];
+			skin.materials[0].mainTexture =  rand[0];
 			break;
 		case GirlType.BLUE:
-			skin.materials[0].mainTexture =  rand[2];
+			skin.materials[0].mainTexture =  rand[1];
 			break;
 		}
 
@@ -103,7 +97,7 @@ public class RainGirl : Cacheable {
 
 	void RandomGirlType()
 	{
-		int rand = Random.Range (0,3);
+		int rand = Random.Range (0,2);
 		switch (rand) {
 
 		case 0:
@@ -111,9 +105,6 @@ public class RainGirl : Cacheable {
 			break;
 		case 1:
 			SetGirlType (GirlType.YELLOW);
-			break;
-		case 2:
-			SetGirlType (GirlType.RED);
 			break;
 		}
 	}
@@ -123,14 +114,11 @@ public class RainGirl : Cacheable {
 
 		switch (newType) {
 
-		case GirlType.RED:
-			skin.materials[0].mainTexture = rand[3];
-			break;
 		case GirlType.YELLOW:
-			skin.materials[0].mainTexture = rand[4];
+			skin.materials[0].mainTexture = rand[2];
 			break;
 		case GirlType.BLUE:
-			skin.materials[0].mainTexture = rand[5];
+			skin.materials[0].mainTexture = rand[3];
 			break;
 		}
 
