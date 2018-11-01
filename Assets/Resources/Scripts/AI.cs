@@ -69,7 +69,7 @@ public class AI : MonoBehaviour {
 	private int layer_maskAI;
 	private int layer_maskWall;
 	private int layer_maskWalkable;
-	private float range = .25f;
+	private float range = .32f;
 	private RaycastHit hit;
 
 	void OnEnable(){
@@ -81,15 +81,14 @@ public class AI : MonoBehaviour {
 		layer_maskAI = LayerMask.GetMask("AI");
 		layer_maskWall = LayerMask.GetMask("Fence");
 		layer_maskWalkable = LayerMask.GetMask("Walkable");
-	}
-
-	void Start(){
-		RotateMesh ();
 		rain = GetComponent<RainGirl> ();
 	}
+
 	// Update is called once per frame
 	void Update () {
-		
+
+
+
 		PlayAnim(currentState);
 		if (currentState != RGState.DIZZY) {
 			if (dizzyFX != null) {
@@ -138,6 +137,7 @@ public class AI : MonoBehaviour {
 			raycasting = false;
 
 			if (transform.position.y > 0) {
+				
 				transform.position += new Vector3 (0, -Time.deltaTime * 3, 0);
 			} else {
 				GetFallFX (transform.position+Vector3.up*0.5f);
@@ -275,7 +275,7 @@ public class AI : MonoBehaviour {
 
 //			float distanceToHit = Vector3.Distance (transform.position,hit.transform.position);
 
-			if (hit.distance < 0.17f) {
+			if (hit.distance < 0.5f) {
 
 				//Check if hit AI
 				if (hit.transform.gameObject.layer == LayerMask.NameToLayer ("AI")) {
@@ -420,20 +420,20 @@ public class AI : MonoBehaviour {
 		raycasting = true;
 	}
 
-	void RotateMesh()
+	public void RotateMesh()
 	{	
 		switch (movement.direction){
 		case Direction.UP:
-			movement.mesh.Rotate(0,0,0);
+			movement.mesh.localEulerAngles = Vector3.zero;
 			break;
 		case Direction.DOWN:
-			movement.mesh.Rotate(0,180,0);
+			movement.mesh.localEulerAngles = new Vector3 (0,180,0);
 			break;
 		case Direction.LEFT:
-			movement.mesh.Rotate(0,270,0);
+			movement.mesh.localEulerAngles = new Vector3 (0,270,0);
 			break;
 		case Direction.RIGHT:
-			movement.mesh.Rotate(0,90,0);
+			movement.mesh.localEulerAngles = new Vector3 (0,90,0);
 			break;
 		}
 	}
@@ -672,6 +672,8 @@ public class AI : MonoBehaviour {
 		movement.enabled = true;
 		movement.Run ();
 		transform.localScale = Vector3.one;
+
+		// ("RotateMesh",1);
 	}
 
 	public void GoHome(Direction dir)
@@ -679,6 +681,7 @@ public class AI : MonoBehaviour {
 		currentState = RGState.GO_HOME;
 		movement.GoToDirection (dir);
 		TurnOffAllArrow ();
+		raycasting = false;
 	}
 
 }

@@ -9,7 +9,9 @@ public class ObjectFactory: MonoBehaviour {
 
 	void Awake()
 	{
-		instance = this;
+		if (instance == null) {
+			instance = this;
+		}
 	}
 
 	public enum PrefabType

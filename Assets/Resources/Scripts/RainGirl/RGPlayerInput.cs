@@ -80,7 +80,7 @@ public class RGPlayerInput : MonoBehaviour {
 
 						float distance = Vector3.Distance (hit.point,closest.position);
 						// If the AI is within distance, select it
-						if (distance < 1f) {
+						if (distance < 1.5f) {
 
 //							print ("You choose  "+closest.name +" distance "+ distance);
 

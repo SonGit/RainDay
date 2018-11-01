@@ -148,6 +148,8 @@ public class RainGirl : Cacheable {
 		}
 
 		ai.Reset ();
+		ai.movement.GoToRandDirection ();
+		ai.RotateMesh ();
 	}
 
 	public override void OnDestroy ()

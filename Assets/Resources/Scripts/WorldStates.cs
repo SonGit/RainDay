@@ -74,6 +74,8 @@ public class WorldStates : MonoBehaviour {
 
 	void Reset()
 	{
+		CustomSound.instance.PlayThemeSound ();
+		CustomSound.instance.StopEndingSound ();
 		speed = .8f;
 		numSpawn = 1;
 		spawnTimeCount = 0;
@@ -87,7 +89,8 @@ public class WorldStates : MonoBehaviour {
 	}
 
 	void Continue()
-	{
+	{	
+		CustomSound.instance.StopEndingSound ();
 		CustomSound.instance.PlayThemeSound ();
 		pauseBtn.SetActive (true);
 		gameplayCanvas.enabled = true;
@@ -98,7 +101,7 @@ public class WorldStates : MonoBehaviour {
 
 	public void StartGame()
 	{
-		CustomSound.instance.PlayThemeSound ();
+		
 		gameStarted = true;
 
 		Reset ();
@@ -161,6 +164,7 @@ public class WorldStates : MonoBehaviour {
 			RainGirl rainGirl = girl.GetComponent<RainGirl> ();
 
 			if (rainGirl != null) {
+				rainGirl.ai.raycasting = false;
 				rainGirl.ai.Wait ();
 			}
 		}
@@ -171,6 +175,7 @@ public class WorldStates : MonoBehaviour {
 	}
 
 	public void BackToMainMenu(){
+		CustomSound.instance.StopEndingSound ();
 		gameStarted = false;
 		GameObject[] girls = GetAllGirl ();
 		foreach (GameObject girl in girls) {

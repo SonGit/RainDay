@@ -48,7 +48,9 @@ public class MainMenuUI : MonoBehaviour {
 	}
 
 	public void BackToMainMenu(){
-		//AudioManager_RB.instance.PlayClip (AudioManager_RB.SoundFX.PressBtn,transform.position);
+		CustomSound.instance.StopEndingSound ();
+		CustomSound.instance.PlayThemeSound ();
+		AudioManager_RG.instance.PlayClip (AudioManager_RG.SoundFX.PressBtn,transform.position);
 		Close ();
 		menuRainParticle.gameObject.SetActive (true);
 		ingameRainParticle.gameObject.SetActive (false);

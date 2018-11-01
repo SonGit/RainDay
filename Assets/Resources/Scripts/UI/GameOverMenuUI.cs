@@ -20,7 +20,8 @@ public class GameOverMenuUI : MonoBehaviour {
 				"easetype", iTween.EaseType.linear,
 				"islocal",true,
 				"onupdatetarget", this.gameObject, 
-				"onupdate", "MovePos"));
+				"onupdate", "MovePos",
+				"delay",1));
 
 	}
 	public void CloseGameOverMenu(){
@@ -32,7 +33,8 @@ public class GameOverMenuUI : MonoBehaviour {
 				"easetype", iTween.EaseType.linear,
 				"islocal",true,
 				"onupdatetarget", this.gameObject, 
-				"onupdate", "MovePos"));
+				"onupdate", "MovePos",
+				"delay",1));
 
 	}
 	public void MovePos(Vector2 position){

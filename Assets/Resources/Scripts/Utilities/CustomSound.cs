@@ -38,7 +38,7 @@ public class CustomSound : MonoBehaviour {
 	}
 
 	public void StopEndingSound(){
-		
+		StopMusic (2);
 	}
 
 	public void UpdateMusic(){

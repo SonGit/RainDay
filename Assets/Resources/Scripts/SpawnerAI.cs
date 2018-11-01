@@ -32,17 +32,13 @@ public class SpawnerAI : MonoBehaviour {
 				GameObject _player;
 				if (rand == 0) {
 					_player = ObjectPool.instance.GetPlayerGirl ().gameObject;
-					movement = _player.GetComponent<RGMovementController> ();
-					movement.GoToRandDirection ();
 				} else {
 					_player = ObjectPool.instance.GetPlayerBoy ().gameObject;
-					movement = _player.GetComponent<RGMovementController> ();
-					movement.GoToRandDirection ();
 				}
 
 				_player.transform.position = pos;
 
-				yield return new WaitForSeconds (.75f);
+				yield return new WaitForSeconds (1.25f);
 			}
 		
 		}

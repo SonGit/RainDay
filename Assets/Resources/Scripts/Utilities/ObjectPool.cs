@@ -25,7 +25,9 @@ public class ObjectPool : MonoBehaviour {
 	GenericObject<AudioSource_RG> audiosource;
 	void Awake()
 	{
-		instance = this;
+		if (instance == null) {
+			instance = this;
+		}
 	}
 
 	// Use this for initialization
@@ -43,8 +45,8 @@ public class ObjectPool : MonoBehaviour {
 		redScoreFX = new GenericObject<Score>(ObjectFactory.PrefabType.RedScore,5);
 		blueScoreFX = new GenericObject<Score>(ObjectFactory.PrefabType.BlueScore,5);
 		yellowScoreFX = new GenericObject<Score>(ObjectFactory.PrefabType.YellowScore,5);
-		playerGirl = new GenericObject<RainGirl>(ObjectFactory.PrefabType.PlayerGirl,5);
-		playerBoy = new GenericObject<RainGirl>(ObjectFactory.PrefabType.PlayerBoy,5);
+		playerGirl = new GenericObject<RainGirl>(ObjectFactory.PrefabType.PlayerGirl,10);
+		playerBoy = new GenericObject<RainGirl>(ObjectFactory.PrefabType.PlayerBoy,10);
 		audiosource = new GenericObject<AudioSource_RG>(ObjectFactory.PrefabType.AudioSource,5);
 	}
 

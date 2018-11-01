@@ -25,6 +25,9 @@ public class LifeManager : MonoBehaviour {
 			if (_currentlife > 3) {
 				_currentlife = 3;
 			}
+			if (_currentlife < 0) {
+				_currentlife = 0;
+			}
 			UpdateLifeUI ();
 		}
 	}
