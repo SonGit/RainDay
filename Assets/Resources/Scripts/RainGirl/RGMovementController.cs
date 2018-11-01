@@ -53,6 +53,8 @@ public class RGMovementController : MonoBehaviour {
 
 	public void GoToDirection(Direction dir)
 	{
+		currentTile = new Vector3 (Mathf.Round (transform.position.x), 0, Mathf.Round (transform.position.z));
+
 		switch (dir) {
 
 		case Direction.UP:
@@ -75,6 +77,8 @@ public class RGMovementController : MonoBehaviour {
 	}
 	public void GoReverse(Direction R)
 	{
+		currentTile = new Vector3 (Mathf.Round (transform.position.x), 0, Mathf.Round (transform.position.z));
+
 		switch (R) {
 
 		case Direction.DOWN:
@@ -115,12 +119,10 @@ public class RGMovementController : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-
+		currentTile = new Vector3 (Mathf.Round (transform.position.x), 0, Mathf.Round (transform.position.z));
 		if (ai.currentState == AI.RGState.START) {
 			return;
 		}
-		
-			currentTile = new Vector3 (Mathf.Round (transform.position.x), 0, Mathf.Round (transform.position.z));
 
 			if (Vector3.Distance (transform.position, currentWaypoint) > 0.01f) {
 					
@@ -215,6 +217,7 @@ public class RGMovementController : MonoBehaviour {
 
 	public void Reverse()
 	{
+		currentTile = new Vector3 (Mathf.Round (transform.position.x), 0, Mathf.Round (transform.position.z));
 		switch (direction) {
 
 		case Direction.DOWN:
