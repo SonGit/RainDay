@@ -1,19 +1,22 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Resources\Scripts\ScoreManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Resources\Scripts\Utilities\BannerAd.cs">
     <Files>
+      <File FileName="Assets\Resources\Scripts\Utilities\BannerAd.cs" Line="23" Column="5" />
+      <File FileName="Assets\Resources\Scripts\ScoreManager.cs" Line="1" Column="1" />
+      <File FileName="Assets\Resources\Scripts\Score.cs" Line="1" Column="1" />
+      <File FileName="Assets\Resources\Scripts\OutBoardDestroy.cs" Line="1" Column="1" />
+      <File FileName="Assets\Resources\Scripts\SpawnerAI.cs" Line="1" Column="1" />
+      <File FileName="Assets\Resources\Scripts\Utilities\ObjectPool.cs" Line="1" Column="1" />
       <File FileName="Assets\Resources\Scripts\LifeManager.cs" Line="1" Column="1" />
-      <File FileName="Assets\Resources\Scripts\WorldStates.cs" Line="18" Column="8" />
-      <File FileName="Assets\Resources\Scripts\UI\GameOverMenuUI.cs" Line="11" Column="18" />
-      <File FileName="Assets\Resources\Scripts\Utilities\DataController.cs" Line="1" Column="1" />
+      <File FileName="Assets\Resources\Scripts\WorldStates.cs" Line="1" Column="1" />
+      <File FileName="Assets\Resources\Scripts\Utilities\AdsManager.cs" Line="1" Column="1" />
+      <File FileName="Assets\Resources\Scripts\UI\GameOverMenuUI.cs" Line="1" Column="1" />
       <File FileName="Assets\Resources\Scripts\Utilities\CustomSound.cs" Line="1" Column="1" />
-      <File FileName="Assets\Resources\Scripts\UI\MusicButton.cs" Line="1" Column="1" />
-      <File FileName="Assets\Resources\Scripts\UI\SFXButton.cs" Line="1" Column="1" />
-      <File FileName="Assets\Resources\Scripts\Utilities\AudioManager_RG.cs" Line="1" Column="1" />
-      <File FileName="Assets\Resources\Scripts\Utilities\AdsManager.cs" Line="71" Column="3" />
-      <File FileName="Assets\Resources\Scripts\AI.cs" Line="6" Column="19" />
-      <File FileName="Assets\Resources\Scripts\RainGirl\RainGirl.cs" Line="99" Column="17" />
-      <File FileName="Assets\Resources\Scripts\ScoreManager.cs" Line="91" Column="47" />
+      <File FileName="Assets\Resources\Scripts\RainGirl\RainGirl.cs" Line="1" Column="1" />
+      <File FileName="C:\Users\ptanh\Downloads\WebsiteManager.cs" Line="1" Column="1" />
+      <File FileName="Assets\Resources\Scripts\RainGirl\RGPlayerInput.cs" Line="1" Column="1" />
+      <File FileName="Assets\Resources\Scripts\AI.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
