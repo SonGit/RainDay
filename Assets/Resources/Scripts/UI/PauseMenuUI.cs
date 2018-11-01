@@ -9,6 +9,7 @@ public class PauseMenuUI : MonoBehaviour {
 	[SerializeField]
 	private float time;
 	public void ShowPauseMenu(){
+		AudioManager_RG.instance.PlayClip (AudioManager_RG.SoundFX.PressBtn,transform.position);
 		iTween.ValueTo(gameObject, 
 			iTween.Hash(
 				"from", rectTransform.anchoredPosition,
@@ -22,6 +23,7 @@ public class PauseMenuUI : MonoBehaviour {
 
 	}
 	public void ClosePauseMenu(){
+		AudioManager_RG.instance.PlayClip (AudioManager_RG.SoundFX.PressBtn,transform.position);
 		iTween.ValueTo(gameObject, 
 			iTween.Hash(
 				"from", rectTransform.anchoredPosition,

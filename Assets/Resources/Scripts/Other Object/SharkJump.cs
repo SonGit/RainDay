@@ -63,6 +63,7 @@ public class SharkJump : MonoBehaviour {
 				if (girl != null) {
 					ScoreManager.instance.SubtractScore (girl.type,50,transform.position + Vector3.up);
 				}
+				AudioManager_RG.instance.PlayClip (AudioManager_RG.SoundFX.bite_hit,transform.position);
 				girl.Destroy ();
 			}
 		}
@@ -140,6 +141,7 @@ public class SharkJump : MonoBehaviour {
 			yield return new WaitForSeconds (2);
 			yield return StartCoroutine (count (4));
 			StartCoroutine (GetWaterFX (transform.position));
+			AudioManager_RG.instance.PlayClip (AudioManager_RG.SoundFX.WaterSplash,transform.position);
 			StartCoroutine(Jump ());
 			StartCoroutine(Launch (target));
 			yield return new WaitForSeconds (1);
@@ -151,6 +153,7 @@ public class SharkJump : MonoBehaviour {
 			WorldStates.instance.isStartle = false;
 			yield return new WaitForSeconds (0.7f);
 			StartCoroutine (GetWaterFX (transform.position));
+			AudioManager_RG.instance.PlayClip (AudioManager_RG.SoundFX.WaterSplash,transform.position);
 			yield return new WaitForSeconds (1f);
 			rb1.useGravity = false;
 			rb1.velocity = Vector3.zero;

@@ -53,7 +53,7 @@ public class RainGirl : Cacheable {
 
 	void RandomBoyType()
 	{
-		int rand = Random.Range (0,3);
+		int rand = Random.Range (0,2);
 		switch (rand) {
 
 		case 0:
@@ -62,9 +62,9 @@ public class RainGirl : Cacheable {
 		case 1:
 			SetBoyType (GirlType.YELLOW);
 			break;
-		case 2:
-			SetBoyType (GirlType.RED);
-			break;
+//		case 2:
+//			SetBoyType (GirlType.RED);
+//			break;
 		}
 	}
 
@@ -73,10 +73,10 @@ public class RainGirl : Cacheable {
 		
 		switch (newType) {
 
-		case GirlType.RED:
-			rand = Resources.Load<Texture> ("Materials/Player/Boy_tex_red");
-			skin.materials[0].mainTexture = rand;
-			break;
+//		case GirlType.RED:
+//			rand = Resources.Load<Texture> ("Materials/Player/Boy_tex_red");
+//			skin.materials[0].mainTexture = rand;
+//			break;
 		case GirlType.YELLOW:
 			rand = Resources.Load<Texture> ("Materials/Player/Boy_tex_yellow");
 			skin.materials[0].mainTexture = rand;
@@ -92,7 +92,7 @@ public class RainGirl : Cacheable {
 
 	void RandomGirlType()
 	{
-		int rand = Random.Range (0,3);
+		int rand = Random.Range (0,2);
 		switch (rand) {
 
 		case 0:
@@ -101,9 +101,9 @@ public class RainGirl : Cacheable {
 		case 1:
 			SetGirlType (GirlType.YELLOW);
 			break;
-		case 2:
-			SetGirlType (GirlType.RED);
-			break;
+//		case 2:
+//			SetGirlType (GirlType.RED);
+//			break;
 		}
 	}
 
@@ -112,10 +112,10 @@ public class RainGirl : Cacheable {
 
 		switch (newType) {
 
-		case GirlType.RED:
-			rand = Resources.Load<Texture> ("Materials/Player/Girl_tex_red");
-			skin.materials[0].mainTexture = rand;
-			break;
+//		case GirlType.RED:
+//			rand = Resources.Load<Texture> ("Materials/Player/Girl_tex_red");
+//			skin.materials[0].mainTexture = rand;
+//			break;
 		case GirlType.YELLOW:
 			rand = Resources.Load<Texture> ("Materials/Player/Girl_tex_yellow");
 			skin.materials[0].mainTexture = rand;

@@ -11,6 +11,7 @@ public class LifeManager : MonoBehaviour {
 
 	private Image[] lifeHearts;
 	private int maxLives = 3;
+	[SerializeField]
 	private int _currentlife;
 	public int currentlife
 	{
@@ -20,6 +21,10 @@ public class LifeManager : MonoBehaviour {
 
 		set {
 			_currentlife = value;
+
+			if (_currentlife > 3) {
+				_currentlife = 3;
+			}
 			UpdateLifeUI ();
 		}
 	}

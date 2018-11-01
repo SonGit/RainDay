@@ -6,7 +6,6 @@ public class Gift : MonoBehaviour {
 	public float speedFalling;
 	public float speedBeating;
 	public Power _pow;
-	public TextMeshPro debugText;
 	// Use this for initialization
 	void Falling(){
 		transform.position += new Vector3 (0, -speedFalling * Time.deltaTime, 0);		
@@ -18,11 +17,13 @@ public class Gift : MonoBehaviour {
 		if (col.gameObject.layer == 9) {
 			switch (_pow) {
 			case Power.FENCE:
+				AudioManager_RG.instance.PlayClip (AudioManager_RG.SoundFX.fence,transform.position);
 				PowerManager.instance.FenceUp ();
 				GetGiftFX ();
 				Destroy (gameObject);
 				break;
 			case Power.LIFE:
+				AudioManager_RG.instance.PlayClip (AudioManager_RG.SoundFX.life,transform.position);
 				PowerManager.instance.LifePower ();
 				LifeManager.instance.currentlife++;
 				GetHeartFX ();
@@ -30,11 +31,13 @@ public class Gift : MonoBehaviour {
 				Destroy (gameObject);
 				break;
 			case Power.GPS:
+				AudioManager_RG.instance.PlayClip (AudioManager_RG.SoundFX.Gps,transform.position);
 				PowerManager.instance.GPSPower ();
 				GetGiftFX ();
 				Destroy (gameObject);
 				break;
 			case Power.REVERSE:
+				AudioManager_RG.instance.PlayClip (AudioManager_RG.SoundFX.dizzy,transform.position);
 				PowerManager.instance.ReversePower ();
 				GetGiftFX ();
 				Destroy (gameObject);
@@ -70,6 +73,5 @@ public class Gift : MonoBehaviour {
 		} else {
 			OnTheGround ();
 		}
-				debugText.text = _pow.ToString();
 	}
 }
