@@ -62,17 +62,20 @@ public class OutBoardDestroy : MonoBehaviour {
 			}
 			if (ai.currentState == AI.RGState.GPS) {
 				ScoreManager.instance.AddScore (girl.type, 100, home.scorePoint.position + Random.insideUnitSphere * 0.75f);
-				Destroy (col.gameObject);
+				AudioManager_RG.instance.PlayClip (AudioManager_RG.SoundFX.RightHome,transform.position);
+				girl.Destroy();
 			}
 			else
 			if (home.hometype == girl.type) {
-					ScoreManager.instance.AddScore (girl.type, 100,  home.scorePoint.position + Random.insideUnitSphere * 0.75f);
-				Destroy (col.gameObject);
+				ScoreManager.instance.AddScore (girl.type, 100,  home.scorePoint.position + Random.insideUnitSphere * 0.75f);
+				AudioManager_RG.instance.PlayClip (AudioManager_RG.SoundFX.RightHome,transform.position);
+				girl.Destroy();
 			}
 
 			if (home.hometype != girl.type) {
 				ScoreManager.instance.SubtractScore (girl.type, 150,  home.scorePoint.position + Random.insideUnitSphere * 0.75f);
-				Destroy (col.gameObject);
+				AudioManager_RG.instance.PlayClip (AudioManager_RG.SoundFX.wronghome,transform.position);
+				girl.Destroy();
 			}
 		}
 	}

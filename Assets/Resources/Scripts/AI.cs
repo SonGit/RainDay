@@ -5,7 +5,7 @@ using TMPro;
 using UnityEngine.UI;
 public enum GirlType
 {
-	RED,
+//	RED,
 	BLUE,
 	YELLOW,
 }
@@ -137,7 +137,7 @@ public class AI : MonoBehaviour {
 			raycasting = false;
 
 			if (transform.position.y > 0) {
-				transform.position += new Vector3 (0, -Time.deltaTime * 2, 0);
+				transform.position += new Vector3 (0, -Time.deltaTime * 3, 0);
 			} else {
 				GetFallFX (transform.position+Vector3.up*0.5f);
 				raycasting = true;
@@ -341,6 +341,7 @@ public class AI : MonoBehaviour {
 			currentState = AI.RGState.GPS;
 		}
 		raycasting = false;
+
 		GetGPSFX (transform.position + Vector3.up/2);
 		movement.GPS ();
 		movement.FollowPath (position);
@@ -375,6 +376,7 @@ public class AI : MonoBehaviour {
 		}
 		Vector3 pos = transform.position+ Vector3.up*1.5f;
 		GetStunFX (pos);
+		AudioManager_RG.instance.PlayClip (AudioManager_RG.SoundFX.Stun,transform.position);
 		movement.Stop ();
 
 		raycasting = false;
@@ -557,6 +559,7 @@ public class AI : MonoBehaviour {
 			WorldStates.instance.GameOver ();
 		}
 		Vector3 pos = Spawn_FX.position + new Vector3 (0, -0.2f, 0);
+		AudioManager_RG.instance.PlayClip (AudioManager_RG.SoundFX.WaterSplash,transform.position);
 		GetWaterFX (pos);
 		// Player die
 		StartCoroutine(Sinking());

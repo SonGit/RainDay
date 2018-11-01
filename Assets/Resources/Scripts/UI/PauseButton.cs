@@ -36,6 +36,7 @@ public class PauseButton : MonoBehaviour {
 
 	public void OnClickBack()
 	{
+		
 		pauseActive.SetActive (true);
 		pauseInactive.SetActive (false);
 	}

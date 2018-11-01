@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class WorldStates : MonoBehaviour {
 
@@ -13,6 +14,14 @@ public class WorldStates : MonoBehaviour {
 	public Canvas gameplayCanvas;
 
 	public float speed;
+
+	public bool isAds;
+	public float countDownTime = 5f;
+	public bool isCountdown;
+	public TextMeshProUGUI countDownText;
+	public GameObject pauseBtn;
+	public GameObject objGameOverPanel;
+	public GameObject objAds;
 
 	[SerializeField]
 	bool gameStarted;
@@ -36,6 +45,7 @@ public class WorldStates : MonoBehaviour {
 		if(gameStarted)
 		SpawnIncrease ();
 
+		CountDown ();
 	}
 
 	[SerializeField]
@@ -68,7 +78,7 @@ public class WorldStates : MonoBehaviour {
 		numSpawn = 1;
 		spawnTimeCount = 0;
 		spawnerDelay = 2;
-
+		pauseBtn.SetActive (true);
 		LifeManager.instance.currentlife = 3;
 
 		SharkJump.SetActive (true);
@@ -78,6 +88,8 @@ public class WorldStates : MonoBehaviour {
 
 	void Continue()
 	{
+		CustomSound.instance.PlayThemeSound ();
+		pauseBtn.SetActive (true);
 		gameplayCanvas.enabled = true;
 		SharkJump.SetActive (true);
 		spawner.SetActive (true);
@@ -86,6 +98,7 @@ public class WorldStates : MonoBehaviour {
 
 	public void StartGame()
 	{
+		CustomSound.instance.PlayThemeSound ();
 		gameStarted = true;
 
 		Reset ();
@@ -137,6 +150,9 @@ public class WorldStates : MonoBehaviour {
 	}
 	public void GameOver()
 	{
+		pauseBtn.SetActive (false);
+		CustomSound.instance.StopThemeSound ();
+		CustomSound.instance.PlayEndingSound ();
 		gameStarted = false;
 		spawner.SetActive (false);
 //		gameplayCanvas.enabled = false;
@@ -150,6 +166,7 @@ public class WorldStates : MonoBehaviour {
 		}
 		SharkJump.SetActive (false);
 		GameOverMenuUI.instance.ShowGameOverMenu ();
+		isCountdown = true;
 		Time.timeScale = 1;
 	}
 
@@ -174,5 +191,45 @@ public class WorldStates : MonoBehaviour {
 	public IEnumerator Screenshot(){
 		StartCoroutine( ScreenShot.Instance.TakeScreenShot ());
 		yield return new WaitForSeconds (1.5f);
+	}
+
+	public void CountDown ()
+	{
+		if (!isCountdown) 
+		{
+			return;
+		}
+
+		countDownTime -= Time.deltaTime;
+
+		if (countDownTime <= 0) {
+			StopCountDown ();
+			//PlayMusicGameOver ();
+			objAds.SetActive (false);
+			objGameOverPanel.SetActive (true);
+		}
+		if(countDownText !=null)
+			countDownText.text = "" + (int)countDownTime;
+	}
+		
+
+	private void PlayCountDown ()
+	{
+		MusicThemeManager.instance.OnMusic (2);
+	}
+
+	public void StopCountDown ()
+	{
+		isCountdown = false;
+		//MusicThemeManager.instance.StopMusic (2);
+		countDownTime = -1f;
+	}
+
+	private void PlayMusicGameOver ()
+	{
+//		if (Player.instance.currentLife <= 0) {
+//			MusicThemeManager.instance.OnMusic (1);
+//		}
+
 	}
 }

@@ -20,10 +20,9 @@ public class ObjectPool : MonoBehaviour {
 	GenericObject<Score> redScoreFX;
 	GenericObject<Score> blueScoreFX;
 	GenericObject<Score> yellowScoreFX;
-
 	GenericObject<RainGirl> playerGirl;
 	GenericObject<RainGirl> playerBoy;
-
+	GenericObject<AudioSource_RG> audiosource;
 	void Awake()
 	{
 		instance = this;
@@ -37,15 +36,16 @@ public class ObjectPool : MonoBehaviour {
 		hitFX = new GenericObject<HitFX>(ObjectFactory.PrefabType.HitFX,5);
 		giftFX = new GenericObject<GiftFX>(ObjectFactory.PrefabType.GiftFX,1);
 		heartFX = new GenericObject<HeartFX>(ObjectFactory.PrefabType.HeartFX,1);
-		gpsFX = new GenericObject<GpsFX>(ObjectFactory.PrefabType.GpsFX,4);
-		stunFX = new GenericObject<StunFX>(ObjectFactory.PrefabType.StunFX,4);
+		gpsFX = new GenericObject<GpsFX>(ObjectFactory.PrefabType.GpsFX,5);
+		stunFX = new GenericObject<StunFX>(ObjectFactory.PrefabType.StunFX,5);
 		dizzyFX = new GenericObject<DizzyFX>(ObjectFactory.PrefabType.DizzyFX,5);
 		fallFX = new GenericObject<FallFX>(ObjectFactory.PrefabType.FallFX,5);
-		redScoreFX = new GenericObject<Score>(ObjectFactory.PrefabType.RedScore,3);
-		blueScoreFX = new GenericObject<Score>(ObjectFactory.PrefabType.BlueScore,3);
-		yellowScoreFX = new GenericObject<Score>(ObjectFactory.PrefabType.YellowScore,3);
-		playerGirl = new GenericObject<RainGirl>(ObjectFactory.PrefabType.PlayerGirl,3);
-		playerBoy = new GenericObject<RainGirl>(ObjectFactory.PrefabType.PlayerBoy,3);
+		redScoreFX = new GenericObject<Score>(ObjectFactory.PrefabType.RedScore,5);
+		blueScoreFX = new GenericObject<Score>(ObjectFactory.PrefabType.BlueScore,5);
+		yellowScoreFX = new GenericObject<Score>(ObjectFactory.PrefabType.YellowScore,5);
+		playerGirl = new GenericObject<RainGirl>(ObjectFactory.PrefabType.PlayerGirl,5);
+		playerBoy = new GenericObject<RainGirl>(ObjectFactory.PrefabType.PlayerBoy,5);
+		audiosource = new GenericObject<AudioSource_RG>(ObjectFactory.PrefabType.AudioSource,5);
 	}
 
 	#region Effect
@@ -105,6 +105,10 @@ public class ObjectPool : MonoBehaviour {
 	public RainGirl GetPlayerBoy()
 	{
 		return playerBoy.GetObj ();
+	}
+	public AudioSource_RG GetAudioSource()
+	{
+		return audiosource.GetObj ();
 	}
 	#endregion
 

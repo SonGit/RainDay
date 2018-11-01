@@ -24,11 +24,13 @@ public class OptionMenuUI : MonoBehaviour {
 
 	public void ShowOption()
 	{
+		AudioManager_RG.instance.PlayClip (AudioManager_RG.SoundFX.PressBtn,transform.position);
 		Open ();
 	}
 
 	public void CloseOption()
 	{
+		AudioManager_RG.instance.PlayClip (AudioManager_RG.SoundFX.PressBtn,transform.position);
 		Close ();
 	}
 

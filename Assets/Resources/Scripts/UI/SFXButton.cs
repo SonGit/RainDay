@@ -38,16 +38,25 @@ public class SFXButton : MonoBehaviour {
 
 	public void OnClickMusicBtn(bool value)
 	{
+		AudioManager_RG.instance.PlayClip (AudioManager_RG.SoundFX.PressBtn,transform.position);
 		isActive = value;
 	}
 
-	void TurnOnMusic()
+	public void TurnOnMusic()
 	{
-
+		DataController.Instance.SubmitSoundSetting ("t");
 	}
 
-	void TurnOffMusic()
+	public void TurnOffMusic()
 	{
-
+		DataController.Instance.SubmitSoundSetting ("f");
+	}
+		
+	void Update (){
+		if (DataController.Instance.GetSoundSetting () == "t") {
+			isActive = true;
+		} else {
+			isActive = false;
+		}
 	}
 }

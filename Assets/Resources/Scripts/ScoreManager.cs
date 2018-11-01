@@ -19,11 +19,7 @@ public class ScoreManager : MonoBehaviour {
 		}
 	}
 
-	public void ScoreSpawn(GirlType type){
-		switch (type) {
 
-		}
-	}
 
 	void Start () {
 	}
@@ -78,9 +74,9 @@ public class ScoreManager : MonoBehaviour {
 		Score go;
 		switch (type) {
 
-		case GirlType.RED:
-			go = ObjectPool.instance.GetRedScoreFX ();
-			break;
+//		case GirlType.RED:
+//			go = ObjectPool.instance.GetRedScoreFX ();
+//			break;
 		case GirlType.BLUE:
 			go = ObjectPool.instance.GetBlueScoreFX ();
 			break;
@@ -88,7 +84,7 @@ public class ScoreManager : MonoBehaviour {
 			go = ObjectPool.instance.GetYellowScoreFX ();
 			break;
 		default:
-			go = ObjectPool.instance.GetRedScoreFX ();
+			go = ObjectPool.instance.GetBlueScoreFX ();
 			break;
 
 		}
