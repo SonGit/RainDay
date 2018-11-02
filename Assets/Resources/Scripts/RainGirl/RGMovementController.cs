@@ -101,22 +101,15 @@ public class RGMovementController : MonoBehaviour {
 	}
 		
 	void Start () {
-		if (WorldStates.instance.isTut) {
-			targetTile = new Vector3 (Mathf.Round (transform.position.x), 0, Mathf.Round (transform.position.z));
-			targetEulerAngle = new Vector3 (0, 0, 0);
-			currentTile = targetTile;
-			tileNo = 10;
-			Stop ();
-			Stop ();	
-		} else {
-			targetTile = new Vector3 (Mathf.Round (transform.position.x), 0, Mathf.Round (transform.position.z));
-			targetEulerAngle = new Vector3 (0, 0, 0);
-			currentTile = targetTile;
-			tileNo = 10;
 
-			GoToDirection (direction);
-			Run ();
-		}
+		targetTile = new Vector3 (Mathf.Round (transform.position.x), 0, Mathf.Round (transform.position.z));
+		targetEulerAngle = new Vector3 (0, 0, 0);
+		currentTile = targetTile;
+		tileNo = 10;
+
+		GoToDirection (direction);
+		Run ();
+
 	}
 
 	void Awake()

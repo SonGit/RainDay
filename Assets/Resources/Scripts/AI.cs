@@ -145,7 +145,7 @@ public class AI : MonoBehaviour {
 					Walk ();
 				} else {
 					Walk ();
-					movement.Stop ();
+					//movement.Stop ();
 					raycasting = true;
 				}
 			}

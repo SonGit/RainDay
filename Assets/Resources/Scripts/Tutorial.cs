@@ -15,6 +15,9 @@ public class Tutorial : MonoBehaviour {
 	private float time;
 	[SerializeField]
 	private bool isShow;
+
+	public HomeTutorialGirlManager tut1girls;
+
 	// Use this for initialization
 	void Awake () {
 		instance = this;
@@ -57,35 +60,12 @@ public class Tutorial : MonoBehaviour {
 
 		WorldStates.instance.tutAllFence.SetActive (false);
 		WorldStates.instance.tutFence.SetActive (true);
-		for (int i = 0; i < 5; i++) {
-			
-			Vector3 pos = new Vector3 (0,-.01f,i);
-
-			int rand = Random.Range (0, 2);
-
-			GameObject _player;
-
-			if (rand == 0) {
-				_player = ObjectPool.instance.GetPlayerGirl ().gameObject;
-			} else {
-				_player = ObjectPool.instance.GetPlayerBoy ().gameObject;
-			}
-
-			AI ai = _player.GetComponent<AI> ();
-
-			ai.fallTime = 100;
-
-			_player.transform.position = pos;
-			ai.raycasting = true;
-			ai.Walk ();
-			ai.movement.Run ();
-			ai.WalkToDirection (Direction.LEFT);
-		}
+		tut1girls.On ();
 	}
 
 	public void OnDoneTutorial2()
 	{
-
+		tut1girls.Off ();
 	}
 
 	public void Tutorial3()
@@ -106,7 +86,7 @@ public class Tutorial : MonoBehaviour {
 			
 
 			for (int i = 0; i < 5; i++) {
-				pos = new Vector3 (Random.Range(0,5),0,Random.Range(0,5));
+				pos = new Vector3 (Random.Range(0,5),1.5f,Random.Range(0,5));
 				int rand = Random.Range (0, 2);
 				GameObject _player;
 				if (rand == 0) {
@@ -148,6 +128,10 @@ public class Tutorial : MonoBehaviour {
 		if (!isShow) {
 			ShowTutorialPanel ();
 		}
+
+		if (CurrentTutorial != 1) {
+			tut1girls.Off ();
+		}
 	}
 
 	public void PreviousTut(){
@@ -159,6 +143,10 @@ public class Tutorial : MonoBehaviour {
 		}
 		if (!isShow) {
 			ShowTutorialPanel ();
+		}
+
+		if (CurrentTutorial != 1) {
+			tut1girls.Off ();
 		}
 	}
 
