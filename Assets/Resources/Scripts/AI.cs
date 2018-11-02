@@ -544,17 +544,18 @@ public class AI : MonoBehaviour {
 				"scale", new Vector3(0.7f,0.7f,0.7f),  
 				"time", 0.5f, 
 				"easeType",iTween.EaseType.linear));
+		if (LifeManager.instance.currentlife > 0) {
+			LifeManager.instance.currentlife--;
+		}
+		if (LifeManager.instance.currentlife == 0 && !WorldStates.instance.isGO) {
+			StartCoroutine( WorldStates.instance.Screenshot ());
+			WorldStates.instance.GameOver ();
+		}
 	}
 
 	public void EndFall(){
 		// FX water
-		if (LifeManager.instance.currentlife > 0) {
-			LifeManager.instance.currentlife--;
-		}
-		if (LifeManager.instance.currentlife == 0) {
-			StartCoroutine( WorldStates.instance.Screenshot ());
-			WorldStates.instance.GameOver ();
-		}
+
 
 		RainGirl rainGirl = this.GetComponent<RainGirl> ();
 		if (rainGirl != null) {
