@@ -14,7 +14,7 @@ public class WorldStates : MonoBehaviour {
 	public Canvas gameplayCanvas;
 
 	public float speed;
-
+	public bool isGO;
 	public bool isAds;
 	public float countDownTime = 5f;
 	public bool isCountdown;
@@ -34,6 +34,7 @@ public class WorldStates : MonoBehaviour {
 
 	void Awake()
 	{
+		isGO = false;
 		instance = this;
 	}
 	void Start () {
@@ -74,8 +75,11 @@ public class WorldStates : MonoBehaviour {
 
 	void Reset()
 	{
+		countDownTime = 5;
+		isGO = false;
 		objGameOverPanel.SetActive (false);
-		objAds.SetActive (true);
+		objAds.SetActive (false);
+		isCountdown = false;
 		isAds = false;
 		CustomSound.instance.PlayThemeSound ();
 		CustomSound.instance.StopEndingSound ();
@@ -95,6 +99,7 @@ public class WorldStates : MonoBehaviour {
 	{	
 		objGameOverPanel.SetActive (false);
 		objAds.SetActive (false);
+		isGO = false;
 		CustomSound.instance.StopEndingSound ();
 		CustomSound.instance.PlayThemeSound ();
 		pauseBtn.SetActive (true);
@@ -141,7 +146,7 @@ public class WorldStates : MonoBehaviour {
 		}
 	}
 
-	public void ContinuteGame(){
+	public void ContinueGame(){
 		
 		Continue ();
 
@@ -158,6 +163,13 @@ public class WorldStates : MonoBehaviour {
 	}
 	public void GameOver()
 	{
+		if (!isAds) {
+			objAds.SetActive (true);
+		} else {
+			objGameOverPanel.SetActive (true);
+		}
+		isGO = true;
+		isCountdown = true;
 		DataController.Instance.SubmitNewPlayerScore (ScoreManager.score);
 		pauseBtn.SetActive (false);
 		CustomSound.instance.StopThemeSound ();
@@ -176,7 +188,7 @@ public class WorldStates : MonoBehaviour {
 		}
 		SharkJump.SetActive (false);
 		GameOverMenuUI.instance.ShowGameOverMenu ();
-		isCountdown = true;
+
 		Time.timeScale = 1;
 	}
 
@@ -231,9 +243,10 @@ public class WorldStates : MonoBehaviour {
 
 	public void StopCountDown ()
 	{
+		
 		isCountdown = false;
 		//MusicThemeManager.instance.StopMusic (2);
-		countDownTime = -1f;
+		countDownTime = 5;
 	}
 
 	private void PlayMusicGameOver ()

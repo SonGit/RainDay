@@ -13369,7 +13369,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1182267849
 RectTransform:
   m_ObjectHideFlags: 0
@@ -24361,6 +24361,7 @@ MonoBehaviour:
   isStartle: 0
   gameplayCanvas: {fileID: 337956910}
   speed: 0
+  isGO: 0
   isAds: 0
   countDownTime: 5
   isCountdown: 0

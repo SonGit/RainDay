@@ -33,8 +33,7 @@ public class GameOverMenuUI : MonoBehaviour {
 				"easetype", iTween.EaseType.linear,
 				"islocal",true,
 				"onupdatetarget", this.gameObject, 
-				"onupdate", "MovePos",
-				"delay",0.3));
+				"onupdate", "MovePos"));
 
 	}
 	public void MovePos(Vector2 position){
