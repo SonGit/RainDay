@@ -99,7 +99,7 @@ public class Fence : MonoBehaviour {
 	public void PopDown()
 	{
 		StopAllCoroutines ();
-		if (!isPopDown) {
+		if (!isPopDown&&!WorldStates.instance.isTut) {
 			
 			ResetRot ();
 

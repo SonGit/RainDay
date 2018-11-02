@@ -148,7 +148,12 @@ public class RainGirl : Cacheable {
 		}
 
 		ai.Reset ();
-		ai.movement.GoToRandDirection ();
+		if (WorldStates.instance.isTut) {
+			ai.movement.Stop ();
+		} else {
+			ai.movement.GoToRandDirection ();
+
+		}
 		ai.RotateMesh ();
 	}
 

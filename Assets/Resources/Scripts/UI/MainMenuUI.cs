@@ -66,6 +66,14 @@ public class MainMenuUI : MonoBehaviour {
 		ingameRainParticle.gameObject.SetActive (true);
 	}
 
+	public void Tut(){
+		AudioManager_RG.instance.PlayClip (AudioManager_RG.SoundFX.PressBtn,transform.position);
+		Open ();
+		menuRainParticle.gameObject.SetActive (false);
+		ingameRainParticle.gameObject.SetActive (true);
+		WorldStates.instance.ShowTut ();
+	}
+
 //	public void Pause()
 //	{
 //		Close ();

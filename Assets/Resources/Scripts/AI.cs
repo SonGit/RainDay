@@ -23,8 +23,8 @@ public class AI : MonoBehaviour {
 	[SerializeField]
 	private float dizzyTimeCount = 0;
 
-	[SerializeField]
-	private float fallTime = 3;
+
+	public float fallTime = 3;
 	[SerializeField]
 	private float fallTimeCount = 0;
 
@@ -93,7 +93,7 @@ public class AI : MonoBehaviour {
 		if (currentState != RGState.DIZZY) {
 			if (dizzyFX != null) {
 				dizzyFX.transform.SetParent(null);
-				Destroy (dizzyFX);
+				dizzyFX.Destroy();
 			}	
 		}
 		if (isDead)
@@ -137,12 +137,17 @@ public class AI : MonoBehaviour {
 			raycasting = false;
 
 			if (transform.position.y > 0) {
-				
 				transform.position += new Vector3 (0, -Time.deltaTime * 3, 0);
 			} else {
-				GetFallFX (transform.position+Vector3.up*0.5f);
-				raycasting = true;
-				Walk ();
+				if (!WorldStates.instance.isTut) {
+					GetFallFX (transform.position + Vector3.up * 0.5f);
+					raycasting = true;
+					Walk ();
+				} else {
+					Walk ();
+					movement.Stop ();
+					raycasting = true;
+				}
 			}
 
 		}
@@ -396,7 +401,7 @@ public class AI : MonoBehaviour {
 		lastFallDirection = Direction.NONE;
 		if (dizzyFX != null) {
 			dizzyFX.transform.SetParent(null);
-			Destroy (dizzyFX);
+			dizzyFX.Destroy();
 		}
 	}
 

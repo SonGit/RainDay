@@ -9,23 +9,23 @@ public class Spawner : MonoBehaviour {
 	public GameObject AI;
 
 	// Use this for initialization
-	IEnumerator Start () {
-
-		while (true) {
-
-			Vector3 pos = new Vector3 (Random.Range(0,5),5,Random.Range(0,5));
-//			Vector3 pos = new Vector3(0,3,0);
-		//	LeanPoolTestOF.instance.GetRainGirlPrefab (pos);
-			GameObject ai = (GameObject)Instantiate(AI,pos,Quaternion.identity);
-
-			AI a = ai.GetComponent<AI> ();
-			a.movement.GoToRandDirection ();
-			//SetColor ();
-
-			yield return new WaitForSeconds (Random.Range(1,2));
-		}
-
-	}
+//	IEnumerator Start () {
+//
+//		while (true) {
+//
+//			Vector3 pos = new Vector3 (Random.Range(0,5),5,Random.Range(0,5));
+////			Vector3 pos = new Vector3(0,3,0);
+//		//	LeanPoolTestOF.instance.GetRainGirlPrefab (pos);
+//			GameObject ai = (GameObject)Instantiate(AI,pos,Quaternion.identity);
+//
+//			AI a = ai.GetComponent<AI> ();
+//			a.movement.GoToRandDirection ();
+//			//SetColor ();
+//
+//			yield return new WaitForSeconds (Random.Range(1,2));
+//		}
+//
+//	}
 //	public void SetColor()
 //	{
 //		int color = Random.Range (0,3);

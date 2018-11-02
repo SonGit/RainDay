@@ -5,8 +5,7 @@ using Lean.Pool;
 
 public class SpawnerAI : MonoBehaviour {
 
-	public GameObject playerBoy;
-	public GameObject playerGirl;
+
 	private Vector3 pos;
 	public RGMovementController movement;
 

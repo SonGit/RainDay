@@ -33,8 +33,8 @@ public class RGMovementController : MonoBehaviour {
 	// Pathfinding stuffs
 	private Seeker seeker;
 	Vector3 currentWaypoint;
-	int currentWaypointNo;
-	Path path;
+	public int currentWaypointNo;
+	public Path path;
 
 	//public List<Vector3> remainingPath;
 
@@ -101,14 +101,22 @@ public class RGMovementController : MonoBehaviour {
 	}
 		
 	void Start () {
-		
-		targetTile = new Vector3 (Mathf.Round(transform.position.x),0,Mathf.Round(transform.position.z));
-		targetEulerAngle = new Vector3 (0,0,0);
-		currentTile = targetTile;
-		tileNo = 10;
+		if (WorldStates.instance.isTut) {
+			targetTile = new Vector3 (Mathf.Round (transform.position.x), 0, Mathf.Round (transform.position.z));
+			targetEulerAngle = new Vector3 (0, 0, 0);
+			currentTile = targetTile;
+			tileNo = 10;
+			Stop ();
+			Stop ();	
+		} else {
+			targetTile = new Vector3 (Mathf.Round (transform.position.x), 0, Mathf.Round (transform.position.z));
+			targetEulerAngle = new Vector3 (0, 0, 0);
+			currentTile = targetTile;
+			tileNo = 10;
 
-		GoToDirection (direction);
-		Run ();
+			GoToDirection (direction);
+			Run ();
+		}
 	}
 
 	void Awake()

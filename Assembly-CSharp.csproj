@@ -333,6 +333,8 @@
      <Compile Include="Assets\Resources\Scripts\SpawnerAI.cs" />
      <Compile Include="Assets\Resources\Scripts\StunFX.cs" />
      <Compile Include="Assets\Resources\Scripts\SwipeManager.cs" />
+     <Compile Include="Assets\Resources\Scripts\Tutorial.cs" />
+     <Compile Include="Assets\Resources\Scripts\TutorialPanel.cs" />
      <Compile Include="Assets\Resources\Scripts\UI\Arrow.cs" />
      <Compile Include="Assets\Resources\Scripts\UI\FinalScoreUI.cs" />
      <Compile Include="Assets\Resources\Scripts\UI\GameOverMenuUI.cs" />

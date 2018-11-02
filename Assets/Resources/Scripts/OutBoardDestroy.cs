@@ -57,7 +57,7 @@ public class OutBoardDestroy : MonoBehaviour {
 			ai = col.GetComponent<AI> ();
 			if (ai.gpsFX != null) {
 				ai.gpsFX.transform.SetParent(null);
-				Destroy (ai.gpsFX);
+				ai.gpsFX.Destroy();
 //				print ("arrive");
 			}
 			if (ai.currentState == AI.RGState.GPS) {

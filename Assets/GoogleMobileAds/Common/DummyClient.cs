@@ -25,7 +25,6 @@ namespace GoogleMobileAds.Common
     {
         public DummyClient()
         {
-            Debug.Log("Dummy " + MethodBase.GetCurrentMethod().Name);
         }
 
         // Disable warnings for unused dummy ad events.
@@ -87,7 +86,7 @@ namespace GoogleMobileAds.Common
 
         public void CreateBannerView(string adUnitId, AdSize adSize, AdPosition position)
         {
-            Debug.Log("Dummy " + MethodBase.GetCurrentMethod().Name);
+ //           Debug.Log("Dummy " + MethodBase.GetCurrentMethod().Name);
         }
 
         public void CreateBannerView(string adUnitId, AdSize adSize, int positionX, int positionY)
@@ -97,7 +96,7 @@ namespace GoogleMobileAds.Common
 
         public void LoadAd(AdRequest request)
         {
-            Debug.Log("Dummy " + MethodBase.GetCurrentMethod().Name);
+ //           Debug.Log("Dummy " + MethodBase.GetCurrentMethod().Name);
         }
 
         public void ShowBannerView()

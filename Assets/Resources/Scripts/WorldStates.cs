@@ -16,13 +16,16 @@ public class WorldStates : MonoBehaviour {
 	public float speed;
 	public bool isGO;
 	public bool isAds;
+	public bool isTut;
 	public float countDownTime = 5f;
 	public bool isCountdown;
 	public TextMeshProUGUI countDownText;
 	public GameObject pauseBtn;
 	public GameObject objGameOverPanel;
 	public GameObject objAds;
-
+	public GameObject tutPanel;
+	public GameObject tutFence;
+	public GameObject tutAllFence;
 	[SerializeField]
 	bool gameStarted;
 
@@ -75,6 +78,8 @@ public class WorldStates : MonoBehaviour {
 
 	void Reset()
 	{
+		pauseBtn.SetActive (true);
+		tutAllFence.SetActive (true);
 		countDownTime = 5;
 		isGO = false;
 		objGameOverPanel.SetActive (false);
@@ -87,7 +92,7 @@ public class WorldStates : MonoBehaviour {
 		numSpawn = 1;
 		spawnTimeCount = 0;
 		spawnerDelay = 2;
-		pauseBtn.SetActive (true);
+
 		LifeManager.instance.currentlife = 3;
 
 		SharkJump.SetActive (true);
@@ -138,7 +143,9 @@ public class WorldStates : MonoBehaviour {
 		GameObject[] girls = GetAllGirl ();
 		foreach (GameObject girl in girls) {
 			if(girl !=null){
-				Destroy(girl);
+				RainGirl rain = girl.GetComponent<RainGirl> ();
+				if (rain != null)
+					rain.Destroy ();
 			}
 			StartGame ();
 			//scrore =0;
@@ -155,6 +162,9 @@ public class WorldStates : MonoBehaviour {
 			RainGirl rainGirl = girl.GetComponent<RainGirl> ();
 
 			if (rainGirl != null) {
+				if (rainGirl.transform.position.y > 0) {
+					rainGirl.transform.position = new Vector3 (rainGirl.transform.position.x, 0,rainGirl.transform.position.z); //Start state
+				}
 				rainGirl.ai.Walk ();
 			}
 		}
@@ -198,7 +208,9 @@ public class WorldStates : MonoBehaviour {
 		GameObject[] girls = GetAllGirl ();
 		foreach (GameObject girl in girls) {
 			if (girl != null) {
-				Destroy (girl);
+				RainGirl rain = girl.GetComponent<RainGirl> ();
+				if (rain != null)
+				rain.Destroy ();
 			}
 		}
 		SharkJump.SetActive (false);
@@ -255,5 +267,22 @@ public class WorldStates : MonoBehaviour {
 //			MusicThemeManager.instance.OnMusic (1);
 //		}
 
+	}
+
+	public void ShowTut(){
+		gameplayCanvas.enabled = true;
+		isTut = true;
+		pauseBtn.SetActive (false);
+		tutPanel.SetActive (true);
+		tutFence.SetActive (true);
+	}
+
+	public void CloseTut(){
+		Time.timeScale = 1;
+		gameplayCanvas.enabled = false;
+		isTut = false;
+		pauseBtn.SetActive (false);
+		tutPanel.SetActive (false);
+		tutFence.SetActive (false);
 	}
 }
