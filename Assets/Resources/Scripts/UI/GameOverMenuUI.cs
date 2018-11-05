@@ -15,7 +15,7 @@ public class GameOverMenuUI : MonoBehaviour {
 		iTween.ValueTo(gameObject, 
 			iTween.Hash(
 				"from", rectTransform.anchoredPosition,
-				"to", new Vector2(rectTransform.anchoredPosition.x, -50),
+				"to", new Vector2(rectTransform.anchoredPosition.x, -40),
 				"time", time, 
 				"easetype", iTween.EaseType.linear,
 				"islocal",true,

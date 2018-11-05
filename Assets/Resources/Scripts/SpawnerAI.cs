@@ -7,7 +7,6 @@ public class SpawnerAI : MonoBehaviour {
 
 
 	private Vector3 pos;
-	public RGMovementController movement;
 
 	// Update is called once per frame
 	void Update () {
