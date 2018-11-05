@@ -27,6 +27,7 @@ public class WorldStates : MonoBehaviour {
 	public GameObject tutFence;
 	public GameObject tutAllFence;
 	public GameObject blur;
+	public GameObject score;
 	[SerializeField]
 	bool gameStarted;
 
@@ -67,8 +68,8 @@ public class WorldStates : MonoBehaviour {
 		if (spawnTimeCount > spawnTime) {
 			numSpawn++;
 
-			if (numSpawn > 4) {
-				numSpawn = 4;
+			if (numSpawn > 6) {
+				numSpawn = 6;
 			} else {
 				spawnerDelay += 2;
 			}
@@ -79,6 +80,7 @@ public class WorldStates : MonoBehaviour {
 
 	void Reset()
 	{
+		score.SetActive (true);
 		blur.SetActive (false);
 		pauseBtn.SetActive (true);
 		tutAllFence.SetActive (true);
@@ -158,7 +160,7 @@ public class WorldStates : MonoBehaviour {
 	public void ContinueGame(){
 		
 		Continue ();
-
+		score.SetActive (true);
 		GameObject[] girls = GetAllGirl ();
 		foreach (GameObject girl in girls) {
 			RainGirl rainGirl = girl.GetComponent<RainGirl> ();
@@ -181,6 +183,7 @@ public class WorldStates : MonoBehaviour {
 			objGameOverPanel.SetActive (true);
 		}
 		isGO = true;
+
 		isCountdown = true;
 		DataController.Instance.SubmitNewPlayerScore (ScoreManager.score);
 		pauseBtn.SetActive (false);
