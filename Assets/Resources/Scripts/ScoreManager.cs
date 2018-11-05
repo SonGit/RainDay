@@ -28,9 +28,7 @@ public class ScoreManager : MonoBehaviour {
 	}
 	void Update ()
 	{
-//		if (Input.GetMouseButtonDown (0)) {
-//			Instantiate (scorePrefab [0],scorePrefab[0].transform.position+ Random.insideUnitSphere*0.5f, Quaternion.identity);
-//		}
+		
 	}
 
 	public void ResetScore()

@@ -2,19 +2,17 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Resources\Scripts\WorldStates.cs">
     <Files>
-      <File FileName="Assets\Resources\Scripts\Tutorial.cs" Line="25" Column="24" />
-      <File FileName="Assets\Resources\Scripts\AI.cs" Line="592" Column="4" />
-      <File FileName="Assets\Resources\Scripts\WorldStates.cs" Line="273" Column="33" />
-      <File FileName="Assets\Resources\Scripts\UI\GameOverMenuUI.cs" Line="1" Column="1" />
-      <File FileName="Assets\Resources\Scripts\Utilities\AdsManager.cs" Line="1" Column="1" />
-      <File FileName="Assets\Resources\Scripts\TutorialPanel.cs" Line="10" Column="1" />
-      <File FileName="Assets\Resources\Scripts\Other Object\FenceManager.cs" Line="1" Column="1" />
-      <File FileName="Assets\Resources\Scripts\Other Object\Fence.cs" Line="102" Column="46" />
-      <File FileName="Assets\Resources\Scripts\RainGirl\RGMovementController.cs" Line="183" Column="1" />
-      <File FileName="Assets\Resources\Scripts\RainGirl\RainGirl.cs" Line="5" Column="1" />
-      <File FileName="Assets\Resources\Scripts\SpawnerAI.cs" Line="28" Column="49" />
-      <File FileName="Assets\Resources\Scripts\OutBoardDestroy.cs" Line="60" Column="23" />
-      <File FileName="Assets\Resources\Scripts\FX\GpsFX.cs" Line="14" Column="2" />
+      <File FileName="Assets\Resources\Scripts\ScoreManager.cs" Line="40" Column="18" />
+      <File FileName="Assets\Resources\Scripts\OutBoardDestroy.cs" Line="76" Column="27" />
+      <File FileName="Assets\Resources\Scripts\AI.cs" Line="559" Column="4" />
+      <File FileName="Assets\Resources\Scripts\RainGirl\HomeTutorialGirlManager.cs" Line="1" Column="1" />
+      <File FileName="Assets\Resources\Scripts\Tutorial.cs" Line="68" Column="20" />
+      <File FileName="Assets\Resources\Scripts\Other Object\Fence.cs" Line="99" Column="16" />
+      <File FileName="Assets\Resources\Scripts\WorldStates.cs" Line="29" Column="2" />
+      <File FileName="Assets\Resources\Scripts\Other Object\FenceManager.cs" Line="9" Column="2" />
+      <File FileName="Assets\Resources\Scripts\PowerManager.cs" Line="31" Column="12" />
+      <File FileName="Assets\Resources\Scripts\Utilities\AdsManager.cs" Line="71" Column="37" />
+      <File FileName="Assets\Resources\Scripts\UI\ScreenShot.cs" Line="41" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -57,7 +57,7 @@ public class AI : MonoBehaviour {
 
 	public RGState currentState;
 
-	float waitTimeCount;
+
 
 	public Arrow[] arrows;
 
@@ -71,6 +71,7 @@ public class AI : MonoBehaviour {
 	private int layer_maskWalkable;
 	private float range = .32f;
 	private RaycastHit hit;
+	private float waitTimeCount;
 
 	void OnEnable(){
 
@@ -334,7 +335,6 @@ public class AI : MonoBehaviour {
 				if (fence != null) {
 					fence.PopDown ();
 					OnHit ();
-					fence.isPopDown = true;
 					return;
 				}
 			}	
@@ -555,6 +555,7 @@ public class AI : MonoBehaviour {
 		if (LifeManager.instance.currentlife == 0 && !WorldStates.instance.isGO) {
 			StartCoroutine( WorldStates.instance.Screenshot ());
 			WorldStates.instance.GameOver ();
+
 		}
 	}
 
@@ -564,7 +565,11 @@ public class AI : MonoBehaviour {
 
 		RainGirl rainGirl = this.GetComponent<RainGirl> ();
 		if (rainGirl != null) {
-			ScoreManager.instance.SubtractScore (rainGirl.type,50,transform.position + Vector3.up);
+			if (rainGirl.transform.position.z > 4) {
+				ScoreManager.instance.SubtractScore (rainGirl.type, 50, transform.position - Vector3.forward);
+			} else {
+				ScoreManager.instance.SubtractScore (rainGirl.type, 50, transform.position + Vector3.up);
+			}
 		}
 
 
@@ -574,8 +579,6 @@ public class AI : MonoBehaviour {
 		// Player die
 		StartCoroutine(Sinking());
 		rain.Destroy ();
-
-		//GameObject _death = (GameObject)Instantiate (FX, Spawn_FX.position+ new Vector3(0,-0.5f,0), Quaternion.Euler (new Vector3 (90, 0, 0)));
 	}
 
 	IEnumerator Sinking() {

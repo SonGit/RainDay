@@ -9,7 +9,7 @@ public class OutBoardDestroy : MonoBehaviour {
 	private Vector3 raycastDir;
 	private Vector3 origin;
 	private int layer_maskAI;
-	private float range = .25f;
+//	private float range = .25f;
 	private RaycastHit hit;
 	public Direction dir;
 	public AutoDoor door;
@@ -61,19 +61,19 @@ public class OutBoardDestroy : MonoBehaviour {
 //				print ("arrive");
 			}
 			if (ai.currentState == AI.RGState.GPS) {
-				ScoreManager.instance.AddScore (girl.type, 100, home.scorePoint.position + Random.insideUnitSphere * 0.75f);
+				ScoreManager.instance.AddScore (girl.type, 100, home.scorePoint.position + Random.insideUnitSphere * .5f);
 				AudioManager_RG.instance.PlayClip (AudioManager_RG.SoundFX.RightHome,transform.position);
 				girl.Destroy();
 			}
 			else
 			if (home.hometype == girl.type) {
-				ScoreManager.instance.AddScore (girl.type, 100,  home.scorePoint.position + Random.insideUnitSphere * 0.75f);
+				ScoreManager.instance.AddScore (girl.type, 100,  home.scorePoint.position + Random.insideUnitSphere * .5f);
 				AudioManager_RG.instance.PlayClip (AudioManager_RG.SoundFX.RightHome,transform.position);
 				girl.Destroy();
 			}
 
 			if (home.hometype != girl.type) {
-				ScoreManager.instance.SubtractScore (girl.type, 150,  home.scorePoint.position + Random.insideUnitSphere * 0.75f);
+				ScoreManager.instance.SubtractScore (girl.type, 150,  home.scorePoint.position + Random.insideUnitSphere * .5f);
 				AudioManager_RG.instance.PlayClip (AudioManager_RG.SoundFX.wronghome,transform.position);
 				girl.Destroy();
 			}

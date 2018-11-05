@@ -26,6 +26,7 @@ public class WorldStates : MonoBehaviour {
 	public GameObject tutPanel;
 	public GameObject tutFence;
 	public GameObject tutAllFence;
+	public GameObject blur;
 	[SerializeField]
 	bool gameStarted;
 
@@ -41,7 +42,7 @@ public class WorldStates : MonoBehaviour {
 		instance = this;
 	}
 	void Start () {
-		speed = .8f;
+		speed = .7f;
 		gameplayCanvas.enabled = false;
 	}
 	void Update(){
@@ -78,8 +79,10 @@ public class WorldStates : MonoBehaviour {
 
 	void Reset()
 	{
+		blur.SetActive (false);
 		pauseBtn.SetActive (true);
 		tutAllFence.SetActive (true);
+		PowerManager.instance.FenceUp ();
 		countDownTime = 5;
 		isGO = false;
 		objGameOverPanel.SetActive (false);
@@ -88,7 +91,7 @@ public class WorldStates : MonoBehaviour {
 		isAds = false;
 		CustomSound.instance.PlayThemeSound ();
 		CustomSound.instance.StopEndingSound ();
-		speed = .8f;
+		speed = .7f;
 		numSpawn = 1;
 		spawnTimeCount = 0;
 		spawnerDelay = 2;
@@ -101,7 +104,7 @@ public class WorldStates : MonoBehaviour {
 	}
 
 	void Continue()
-	{	
+	{	blur.SetActive (false);
 		objGameOverPanel.SetActive (false);
 		objAds.SetActive (false);
 		isGO = false;
@@ -120,7 +123,6 @@ public class WorldStates : MonoBehaviour {
 		gameStarted = true;
 
 		Reset ();
-
 		GameObject[] girls = GetAllGirl ();
 		foreach (GameObject girl in girls) {
 			RainGirl rainGirl = girl.GetComponent<RainGirl> ();
@@ -131,7 +133,7 @@ public class WorldStates : MonoBehaviour {
 			}
 		}
 
-		PowerManager.instance.FenceUp ();
+
 		ScoreManager.instance.ResetScore ();
 	}
 
@@ -204,6 +206,7 @@ public class WorldStates : MonoBehaviour {
 
 	public void BackToMainMenu(){
 		CustomSound.instance.StopEndingSound ();
+		blur.SetActive (false);
 		gameStarted = false;
 		GameObject[] girls = GetAllGirl ();
 		foreach (GameObject girl in girls) {
@@ -224,12 +227,13 @@ public class WorldStates : MonoBehaviour {
 	}
 
 	public IEnumerator Screenshot(){
-		StartCoroutine( ScreenShot.Instance.TakeScreenShot ());
-		yield return new WaitForSeconds (0.5f);
+		yield return StartCoroutine( ScreenShot.Instance.TakeScreenShot ());
+
 	}
 
 	public void CountDown ()
 	{
+		
 		if (!isCountdown) 
 		{
 			return;
@@ -272,17 +276,19 @@ public class WorldStates : MonoBehaviour {
 	public void ShowTut(){
 		gameplayCanvas.enabled = true;
 		isTut = true;
+		PowerManager.instance.FenceUp ();
 		pauseBtn.SetActive (false);
 		tutPanel.SetActive (true);
 		tutFence.SetActive (true);
 	}
 
 	public void CloseTut(){
+		tutFence.SetActive (false);
+		tutPanel.SetActive (false);
 		Time.timeScale = 1;
 		gameplayCanvas.enabled = false;
 		isTut = false;
 		pauseBtn.SetActive (false);
-		tutPanel.SetActive (false);
-		tutFence.SetActive (false);
+
 	}
 }

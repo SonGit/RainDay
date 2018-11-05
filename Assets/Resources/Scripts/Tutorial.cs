@@ -196,10 +196,12 @@ public class Tutorial : MonoBehaviour {
 	public void MovePos(Vector2 position){
 		rectTransform.anchoredPosition = position;
 	}
+
 	public GameObject[] GetAllGirl()
 	{
 		return GameObject.FindGameObjectsWithTag ("AI");
 	}
+
 	public void ClearAI(){
 		GameObject[] girls = GetAllGirl ();
 		foreach (GameObject girl in girls) {
