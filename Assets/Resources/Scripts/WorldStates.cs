@@ -67,10 +67,10 @@ public class WorldStates : MonoBehaviour {
 		if (spawnTimeCount > spawnTime) {
 			numSpawn++;
 
-			if (numSpawn > 4) {
-				numSpawn = 4;
+			if (numSpawn > 6) {
+				numSpawn = 6;
 			} else {
-				spawnerDelay += 2;
+				spawnerDelay += 1.5f;
 			}
 
 			spawnTimeCount = 0;

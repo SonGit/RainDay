@@ -18,6 +18,8 @@ public class Tutorial : MonoBehaviour {
 
 	public HomeTutorialGirlManager tut1girls;
 
+	public AI rainGirlTut4;
+
 	// Use this for initialization
 	void Awake () {
 		instance = this;
@@ -26,6 +28,12 @@ public class Tutorial : MonoBehaviour {
 	void OnEnable(){
 		SetActivePanel (0);
 		ShowTutorialPanel ();
+	}
+
+	void OnDisable(){
+		ClearAI ();
+		OnDoneTutorial4 ();
+		CurrentTutorial = 0;
 	}
 
 	void Start()
@@ -111,14 +119,27 @@ public class Tutorial : MonoBehaviour {
 	public void Tutorial4()
 	{
 		SetActivePanel (3);
+		Time.timeScale = 1;
+		rainGirlTut4.gameObject.SetActive (true);
+		rainGirlTut4.transform.position = new Vector3 (3, 0, 2);
+		rainGirlTut4.WalkToDirection (Direction.RIGHT);
+		rainGirlTut4.TurnOffAllArrow ();
+		rainGirlTut4.ForceDizzy ();
+		WorldStates.instance.tutAllFence.SetActive (true);
 	}
 
 	public void OnDoneTutorial4()
 	{
-
+		if(rainGirlTut4 != null)
+		rainGirlTut4.gameObject.SetActive (false);
+		WorldStates.instance.tutAllFence.SetActive (false);
 	}
 
 	public void NextTut(){
+		
+		StopAllCoroutines();
+		ClearAI ();
+
 		Time.timeScale = 0;
 		if (CurrentTutorial < tutorialPanels.Length-1) {
 			SetActivePanel (CurrentTutorial + 1);
@@ -132,10 +153,18 @@ public class Tutorial : MonoBehaviour {
 		if (CurrentTutorial != 1) {
 			tut1girls.Off ();
 		}
+
+		if (CurrentTutorial != 3) {
+			OnDoneTutorial4 ();
+		}
 	}
 
 	public void PreviousTut(){
+		
+		StopAllCoroutines();
+		ClearAI ();
 		Time.timeScale = 0;
+
 		if (CurrentTutorial == 0) {
 			SetActivePanel (tutorialPanels.Length-1);
 		} else {
@@ -147,6 +176,10 @@ public class Tutorial : MonoBehaviour {
 
 		if (CurrentTutorial != 1) {
 			tut1girls.Off ();
+		}
+
+		if (CurrentTutorial != 3) {
+			OnDoneTutorial4 ();
 		}
 	}
 

@@ -239,9 +239,16 @@ public class AI : MonoBehaviour {
 		ResetTimer ();
 	}
 
+	public void ForceDizzy()
+	{
+		dizzyAnimTimeCount = 0;
+		movement.Run ();
+		GetDizzyFX (transform.position + Vector3.up*1.2f);
+		currentState = RGState.DIZZY;
+		PlayAnim (RGState.DIZZY);
+	}
+
 	public bool raycasting = true;
-
-
 
 	void RaycastAI ()
 	{
@@ -407,6 +414,13 @@ public class AI : MonoBehaviour {
 
 	void WalkBack()
 	{
+		if(Tutorial.instance != null)
+		if (Tutorial.instance.CurrentTutorial == 3) {
+			movement.Reverse ();
+			ForceDizzy ();
+			Invoke ("DelayRaycast",.1f);
+			return;
+		}
 
 		Anim.ResetTrigger ("Stun");
 		Anim.ResetTrigger ("Dizzy");
@@ -500,6 +514,7 @@ public class AI : MonoBehaviour {
 	public void PlayAnim(RGState _currentState) {
 		switch (_currentState) {
 		case RGState.DIZZY:
+			Anim.ResetTrigger ("Stun");
 			Anim.ResetTrigger ("Walk");
 			Anim.ResetTrigger ("Idle");
 			Anim.ResetTrigger ("Dizzy_Anim");
@@ -520,6 +535,7 @@ public class AI : MonoBehaviour {
 			Anim.SetTrigger ("Fall");
 			break;
 		case RGState.HIT:
+			Anim.ResetTrigger ("Dizzy");
 			Anim.ResetTrigger ("Idle");
 			Anim.ResetTrigger ("Walk");
 			Anim.SetTrigger ("Stun");
