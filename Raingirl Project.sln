@@ -1,13 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Raingirl Project", "Assembly-CSharp.csproj", "{EE54E813-F010-C68E-D74D-2B99A1EBB3A6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{EE54E813-F010-C68E-D74D-2B99A1EBB3A6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Raingirl Project", "Assembly-CSharp-firstpass.csproj", "{969FF6D0-3029-2E3D-996D-1AA56A0C521F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-firstpass", "Assembly-CSharp-firstpass.csproj", "{969FF6D0-3029-2E3D-996D-1AA56A0C521F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Raingirl Project", "Assembly-CSharp-Editor.csproj", "{FC830E65-DBDD-C488-7BB4-4CE20B598D2D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-Editor", "Assembly-CSharp-Editor.csproj", "{FC830E65-DBDD-C488-7BB4-4CE20B598D2D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Raingirl Project", "Assembly-CSharp-Editor-firstpass.csproj", "{7B0980FB-2228-3B55-9A1C-BE7699C054AA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-Editor-firstpass", "Assembly-CSharp-Editor-firstpass.csproj", "{7B0980FB-2228-3B55-9A1C-BE7699C054AA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

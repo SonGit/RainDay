@@ -32,22 +32,22 @@ public class ObjectPool : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
+		Application.targetFrameRate = 60;
 		// Effect
-		waterFX = new GenericObject<WaterFX>(ObjectFactory.PrefabType.WaterSplash,5);
-		hitFX = new GenericObject<HitFX>(ObjectFactory.PrefabType.HitFX,5);
+		waterFX = new GenericObject<WaterFX>(ObjectFactory.PrefabType.WaterSplash,10);
+		hitFX = new GenericObject<HitFX>(ObjectFactory.PrefabType.HitFX,10);
 		giftFX = new GenericObject<GiftFX>(ObjectFactory.PrefabType.GiftFX,1);
 		heartFX = new GenericObject<HeartFX>(ObjectFactory.PrefabType.HeartFX,1);
-		gpsFX = new GenericObject<GpsFX>(ObjectFactory.PrefabType.GpsFX,5);
-		stunFX = new GenericObject<StunFX>(ObjectFactory.PrefabType.StunFX,5);
-		dizzyFX = new GenericObject<DizzyFX>(ObjectFactory.PrefabType.DizzyFX,5);
-		fallFX = new GenericObject<FallFX>(ObjectFactory.PrefabType.FallFX,5);
+		gpsFX = new GenericObject<GpsFX>(ObjectFactory.PrefabType.GpsFX,10);
+		stunFX = new GenericObject<StunFX>(ObjectFactory.PrefabType.StunFX,10);
+		dizzyFX = new GenericObject<DizzyFX>(ObjectFactory.PrefabType.DizzyFX,10);
+		fallFX = new GenericObject<FallFX>(ObjectFactory.PrefabType.FallFX,10);
 		redScoreFX = new GenericObject<Score>(ObjectFactory.PrefabType.RedScore,5);
-		blueScoreFX = new GenericObject<Score>(ObjectFactory.PrefabType.BlueScore,5);
-		yellowScoreFX = new GenericObject<Score>(ObjectFactory.PrefabType.YellowScore,5);
-		playerGirl = new GenericObject<RainGirl>(ObjectFactory.PrefabType.PlayerGirl,10);
-		playerBoy = new GenericObject<RainGirl>(ObjectFactory.PrefabType.PlayerBoy,10);
-		audiosource = new GenericObject<AudioSource_RG>(ObjectFactory.PrefabType.AudioSource,5);
+		blueScoreFX = new GenericObject<Score>(ObjectFactory.PrefabType.BlueScore,10);
+		yellowScoreFX = new GenericObject<Score>(ObjectFactory.PrefabType.YellowScore,10);
+		playerGirl = new GenericObject<RainGirl>(ObjectFactory.PrefabType.PlayerGirl,20);
+		playerBoy = new GenericObject<RainGirl>(ObjectFactory.PrefabType.PlayerBoy,20);
+		audiosource = new GenericObject<AudioSource_RG>(ObjectFactory.PrefabType.AudioSource,10);
 	}
 
 	#region Effect

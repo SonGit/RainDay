@@ -62,7 +62,7 @@ public class AudioManager_RG : MonoBehaviour {
 			audio.audioSource.clip = clip;
 
 			if (isOnSound == "t") {
-				audio.audioSource.volume = 1f;
+				audio.audioSource.volume = 0.5f;
 			} else if (isOnSound == "f"){
 				audio.audioSource.volume = 0;
 			}
