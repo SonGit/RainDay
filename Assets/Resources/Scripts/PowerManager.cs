@@ -63,6 +63,7 @@ public class PowerManager : MonoBehaviour {
 			}
 	}
 	public void ReversePower(){
+		
 		GameObject[] girls = GetAllGirl ();
 		foreach (GameObject girl in girls) {
 			RainGirl rainGirl = girl.GetComponent<RainGirl> ();

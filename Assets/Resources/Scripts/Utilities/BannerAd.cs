@@ -12,17 +12,17 @@ public class BannerAd : MonoBehaviour {
 
 	private void ShowBannerAd()
 	{
-		string adID = "ca-app-pub-4288592540157567/7952347769";
+		string adID = "ca-app-pub-4288592540157567/7783295176";
 
 		//***For Testing in the Device***
-		AdRequest request = new AdRequest.Builder()
-			.AddTestDevice(AdRequest.TestDeviceSimulator)       // Simulator.
-			.AddTestDevice("8F81DE33520C4C2A7C6EBEBFEB19D011")  // My test device.
-			.Build();
-
 //		AdRequest request = new AdRequest.Builder()
-//			.AddExtra("max_ad_content_rating", "G")
+//			.AddTestDevice(AdRequest.TestDeviceSimulator)       // Simulator.
+//			.AddTestDevice("8F81DE33520C4C2A7C6EBEBFEB19D011")  // My test device.
 //			.Build();
+
+		AdRequest request = new AdRequest.Builder()
+			.AddExtra("max_ad_content_rating", "G")
+			.Build();
 		
 		//***For Production When Submit App***
 		//AdRequest request = new AdRequest.Builder().Build();

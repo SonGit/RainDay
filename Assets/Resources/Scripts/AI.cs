@@ -193,7 +193,9 @@ public class AI : MonoBehaviour {
 			
 
 		if (currentState == RGState.DIZZY) {
+			
 			dizzyTimeCount += Time.deltaTime;
+			movement.speed = .35f;
 
 			if (dizzyTimeCount > dizzyTime) {
 				dizzyTimeCount = 0;

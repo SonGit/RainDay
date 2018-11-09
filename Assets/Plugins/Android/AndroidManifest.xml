@@ -27,7 +27,7 @@
         </activity>
 		<provider
 		  android:name="com.yasirkula.unity.UnitySSContentProvider"
-		  android:authorities="GoingHome"
+		  android:authorities="GuideMeHome"
 		  android:exported="false"
 		  android:grantUriPermissions="true" />
     </application>

@@ -1,16 +1,10 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Resources\Scripts\Utilities\UniFPSCounter.cs.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Resources\Scripts\AI.cs">
     <Files>
-      <File FileName="Assets\Resources\Scripts\Utilities\FPSDisplay.cs" Line="12" Column="2" />
-      <File FileName="Assets\Resources\Scripts\AI.cs" Line="1" Column="1" />
-      <File FileName="Assets\Resources\Scripts\Utilities\Cacheable.cs" Line="1" Column="1" />
-      <File FileName="Assets\AstarPathfindingProject\Core\Misc\ObjectPool.cs" Line="1" Column="1" />
-      <File FileName="Assets\Resources\Scripts\Utilities\ObjectPool.cs" Line="1" Column="1" />
-      <File FileName="Assets\Resources\Scripts\Utilities\AudioManager_RG.cs" Line="1" Column="1" />
-      <File FileName="Assets\Resources\Scripts\Utilities\DataController.cs" Line="1" Column="1" />
-      <File FileName="Assets\Resources\Scripts\Other Object\Gift.cs" Line="1" Column="1" />
-      <File FileName="Assets\Resources\Scripts\Utilities\UniFPSCounter.cs.cs" Line="71" Column="2" />
+      <File FileName="Assets\Resources\Scripts\PowerManager.cs" Line="66" Column="3" />
+      <File FileName="Assets\Resources\Scripts\RainGirl\RGMovementController.cs" Line="170" Column="46" />
+      <File FileName="Assets\Resources\Scripts\AI.cs" Line="246" Column="19" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

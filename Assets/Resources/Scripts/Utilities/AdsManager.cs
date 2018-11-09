@@ -9,7 +9,7 @@ public class AdsManager : MonoBehaviour {
 	public static AdsManager instance;
 
 	private Button m_Button;
-	private string gameId = "2698344";
+	private string gameId = "2900557";
 	//private string placementId = "rewardedVideo";
 	private string placementId = "rewardedVideo";
 
@@ -27,7 +27,7 @@ public class AdsManager : MonoBehaviour {
 		//---------- ONLY NECESSARY FOR ASSET PACKAGE INTEGRATION: ----------//
 
 		if (Advertisement.isSupported) {
-			Advertisement.Initialize (gameId, true);
+			Advertisement.Initialize (gameId);
 		}
 
 		//-------------------------------------------------------------------//

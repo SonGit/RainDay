@@ -337,7 +337,6 @@
      <Compile Include="Assets\Resources\Scripts\Tutorial.cs" />
      <Compile Include="Assets\Resources\Scripts\TutorialPanel.cs" />
      <Compile Include="Assets\Resources\Scripts\UI\Arrow.cs" />
-     <Compile Include="Assets\Resources\Scripts\UI\debug.cs" />
      <Compile Include="Assets\Resources\Scripts\UI\FinalScoreUI.cs" />
      <Compile Include="Assets\Resources\Scripts\UI\GameOverMenuUI.cs" />
      <Compile Include="Assets\Resources\Scripts\UI\MainMenuUI.cs" />
@@ -517,17 +516,17 @@
  <Reference Include="Unity.TextMeshPro.Editor">
  <HintPath>D:/Raingirl Project/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
  </Reference>
- <Reference Include="Unity.PackageManagerUI.Editor">
- <HintPath>D:/Raingirl Project/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
- </Reference>
- <Reference Include="Unity.TextMeshPro">
- <HintPath>D:/Raingirl Project/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
- </Reference>
  <Reference Include="Unity.Analytics.Android.Editor">
  <HintPath>D:/Raingirl Project/Library/ScriptAssemblies/Unity.Analytics.Android.Editor.dll</HintPath>
  </Reference>
+ <Reference Include="Unity.PackageManagerUI.Editor">
+ <HintPath>D:/Raingirl Project/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+ </Reference>
  <Reference Include="Unity.CollabProxy.Editor">
  <HintPath>D:/Raingirl Project/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.TextMeshPro">
+ <HintPath>D:/Raingirl Project/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.AIModule">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2018.3.0b7/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
