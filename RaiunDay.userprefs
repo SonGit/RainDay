@@ -1,0 +1,18 @@
+﻿<Properties StartupItem="Assembly-CSharp.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Resources\Scripts\Tutorial.cs">
+    <Files>
+      <File FileName="Assets\Resources\Scripts\Tutorial.cs" Line="21" Column="9" />
+      <File FileName="Assets\Resources\Scripts\UI\GameOverMenuUI.cs" Line="1" Column="1" />
+      <File FileName="Assets\Resources\Scripts\Other Object\RemovePlayerControl.cs" Line="1" Column="1" />
+      <File FileName="Assets\Resources\Scripts\AI.cs" Line="1" Column="1" />
+      <File FileName="Assets\Resources\Scripts\RainGirl\RGMovementController.cs" Line="57" Column="3" />
+      <File FileName="Assets\Resources\Scripts\RainGirl\RGPlayerInput.cs" Line="1" Column="1" />
+      <File FileName="Assets\Resources\Scripts\PowerManager.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
